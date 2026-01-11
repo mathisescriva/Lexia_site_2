@@ -22,9 +22,9 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="container py-32 md:py-40">
-          <div className="relative flex items-center justify-center gap-8 md:gap-16">
+          <div className="relative flex items-start justify-center gap-8 md:gap-16">
             {/* Left Waveform */}
-            <div className="hidden md:block opacity-20">
+            <div className="hidden md:block opacity-20 pt-4">
               <LiveWaveform
                 active={false}
                 processing={true}
@@ -60,24 +60,27 @@ export default function Home() {
               {companyLogos.length > 0 && (
                 <div className="pt-16 border-t">
                   <p className="mb-8 text-sm text-muted-foreground font-normal">Trusted by leading enterprises</p>
-                  <div className="flex flex-wrap items-center justify-center gap-12 opacity-60 grayscale">
-                    {companyLogos.map((logo, index) => (
-                      <Image
-                        key={index}
-                        src={logo.src}
-                        alt={logo.alt}
-                        width={120}
-                        height={40}
-                        className="h-8 w-auto object-contain"
-                      />
-                    ))}
+                  <div className="relative overflow-hidden">
+                    <div className="flex items-center gap-12 opacity-60 grayscale animate-scroll">
+                      {/* Duplicate logos for seamless loop */}
+                      {[...companyLogos, ...companyLogos].map((logo, index) => (
+                        <Image
+                          key={index}
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={120}
+                          height={40}
+                          className="h-8 w-auto object-contain flex-shrink-0"
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
             </div>
             
             {/* Right Waveform */}
-            <div className="hidden md:block opacity-20">
+            <div className="hidden md:block opacity-20 pt-4">
               <LiveWaveform
                 active={false}
                 processing={true}

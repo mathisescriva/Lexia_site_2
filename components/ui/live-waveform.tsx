@@ -40,20 +40,19 @@ export function LiveWaveform({
     const animate = () => {
       timeRef.current += 0.015
       
-      // Reset timeRef to prevent overflow (loop the animation)
-      if (timeRef.current > Math.PI * 1000) {
-        timeRef.current = 0
-      }
+      // Sine functions are periodic, so no need to reset - just use the value directly
+      // Using modulo with a large period to prevent overflow while maintaining continuity
+      const time = timeRef.current % (Math.PI * 2 * 1000)
 
       setAmplitudes((prev) =>
         prev.map((_, index) => {
           // Create a regular, smooth wave pattern
           const x = (index / prev.length) * Math.PI * 4
-          const phase = x + timeRef.current
+          const phase = x + time
           
           // Regular sine wave with multiple harmonics
           const wave1 = Math.sin(phase) * 0.12
-          const wave2 = Math.sin(phase * 1.5 + timeRef.current * 0.5) * 0.06
+          const wave2 = Math.sin(phase * 1.5 + time * 0.5) * 0.06
           const base = 0.2
           const amplitude = base + wave1 + wave2
           
