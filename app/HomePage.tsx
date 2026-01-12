@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import { LiveWaveform } from "@/components/ui/live-waveform"
 import { Matrix, wave, pulse, loader, snake } from "@/components/ui/matrix"
 import { ScrollAnimation } from "@/components/ScrollAnimation"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -52,9 +53,9 @@ export function HomePage() {
                 <span className="block mt-2.5 font-extralight tracking-[-0.025em]">with Enterprise</span>
               </h1>
               <p className="mb-12 text-lg leading-relaxed text-muted-foreground md:text-xl" itemProp="description">
-                We are a deep tech company reconciling speech with enterprise systems.
-                Bridging the gap between cutting-edge research and practical applications.
-                In collaboration with the Intelligence Lab of ECE, we develop optimized speech-to-text models for enterprise environments.
+                We are a deeptech company that transforms how enterprises interact with their systems through voice. 
+                We build speech-to-text solutions that integrate seamlessly into your workflows, enabling voice-activated 
+                CRM systems, automated call transcription, and intelligent meeting analysis.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row mb-16">
                 <Link href="/contact">
@@ -250,7 +251,7 @@ export function HomePage() {
                         loop={true}
                         size={6}
                         gap={1.5}
-                        brightness={0.7}
+                        brightness={0.5}
                       />
                     </div>
                     <CardHeader className="p-0 pb-4">
@@ -273,7 +274,7 @@ export function HomePage() {
                         loop={true}
                         size={6}
                         gap={1.5}
-                        brightness={0.7}
+                        brightness={0.5}
                       />
                     </div>
                     <CardHeader className="p-0 pb-4">
@@ -296,7 +297,7 @@ export function HomePage() {
                         loop={true}
                         size={6}
                         gap={1.5}
-                        brightness={0.7}
+                        brightness={0.5}
                       />
                     </div>
                     <CardHeader className="p-0 pb-4">
@@ -319,7 +320,7 @@ export function HomePage() {
                         loop={true}
                         size={6}
                         gap={1.5}
-                        brightness={0.7}
+                        brightness={0.5}
                       />
                     </div>
                     <CardHeader className="p-0 pb-4">
@@ -369,7 +370,7 @@ export function HomePage() {
                   <CardContent className="p-0">
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src="/logos/IALAB1.webp"
+                        src="/logos/image_illustration1.png"
                         alt="Optimized Models"
                         fill
                         className="object-cover"
@@ -380,9 +381,6 @@ export function HomePage() {
                   <CardHeader className="relative">
                     <div className="text-xs font-normal text-orange-600 dark:text-orange-400 uppercase tracking-wider mb-2">
                       Research
-                    </div>
-                    <div className="w-12 h-12 rounded-lg border border-foreground/20 flex items-center justify-center text-lg font-light mb-4">
-                      01
                     </div>
                     <CardTitle className="text-xl font-light mb-3" itemProp="name">Optimized Models</CardTitle>
                     <CardDescription className="text-sm leading-relaxed" itemProp="description">
@@ -399,7 +397,7 @@ export function HomePage() {
                   <CardContent className="p-0">
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src="/logos/service_tech.jpeg"
+                        src="/logos/image_illustration2.png"
                         alt="Post-Training"
                         fill
                         className="object-cover"
@@ -410,9 +408,6 @@ export function HomePage() {
                   <CardHeader className="relative">
                     <div className="text-xs font-normal text-violet-600 dark:text-violet-400 uppercase tracking-wider mb-2">
                       Development
-                    </div>
-                    <div className="w-12 h-12 rounded-lg border border-foreground/20 flex items-center justify-center text-lg font-light mb-4">
-                      02
                     </div>
                     <CardTitle className="text-xl font-light mb-3" itemProp="name">Post-Training</CardTitle>
                     <CardDescription className="text-sm leading-relaxed" itemProp="description">
@@ -429,7 +424,7 @@ export function HomePage() {
                   <CardContent className="p-0">
                     <div className="relative h-48 overflow-hidden">
                       <Image
-                        src="/logos/IALAB1.webp"
+                        src="/logos/image_illustration3.png"
                         alt="Hugging Face"
                         fill
                         className="object-cover"
@@ -440,9 +435,6 @@ export function HomePage() {
                   <CardHeader className="relative">
                     <div className="text-xs font-normal text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2">
                       Open Source
-                    </div>
-                    <div className="w-12 h-12 rounded-lg border border-foreground/20 flex items-center justify-center text-lg font-light mb-4">
-                      03
                     </div>
                     <CardTitle className="text-xl font-light mb-3" itemProp="name">Hugging Face</CardTitle>
                     <CardDescription className="text-sm leading-relaxed" itemProp="description">
@@ -471,26 +463,48 @@ export function HomePage() {
         {/* Contact Section */}
         <section id="contact" className="container py-24 md:py-32" itemScope={true} itemType="https://schema.org/ContactPage">
           <ScrollAnimation>
-            <div className="mx-auto max-w-4xl text-center">
-              <h2 className="mb-6 text-3xl font-light tracking-tight md:text-4xl lg:text-5xl" itemProp="name">
-                Get in Touch
-              </h2>
-              <p className="mb-12 text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto md:text-lg" itemProp="description">
-                Interested in learning more about our speech technology solutions?
-                Let's start a conversation about how we can help your enterprise.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/contact">
-                  <Button size="lg" variant="default" className="font-normal">
-                    Book a Call
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="font-normal">
-                    Contact Us
-                  </Button>
-                </Link>
+            <div className="mx-auto max-w-5xl">
+              <div className="mb-12 flex items-center justify-center opacity-20">
+                <LiveWaveform
+                  active={true}
+                  processing={true}
+                  height={100}
+                  barWidth={3}
+                  barGap={2}
+                  mode="dynamic"
+                  fadeEdges={true}
+                  barColor="gray"
+                  historySize={120}
+                />
               </div>
+              <Card className="border-2 rounded-xl p-8 md:p-12 relative overflow-hidden group">
+                {/* Subtle gradient background */}
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/5 via-violet-500/5 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/5 via-transparent to-transparent rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
+                
+                <div className="relative z-10 text-center">
+                  <h2 className="mb-6 text-3xl font-light tracking-tight md:text-4xl lg:text-5xl" itemProp="name">
+                    Get in Touch
+                  </h2>
+                  <p className="mb-10 text-base leading-relaxed text-muted-foreground max-w-2xl mx-auto md:text-lg" itemProp="description">
+                    Interested in learning more about our speech technology solutions?
+                    Let's start a conversation about how we can help your enterprise.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Link href="/contact">
+                      <Button size="lg" variant="default" className="font-normal group/btn">
+                        Book a Call
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Button>
+                    </Link>
+                    <Link href="/contact">
+                      <Button size="lg" variant="outline" className="font-normal">
+                        Contact Us
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </Card>
             </div>
           </ScrollAnimation>
         </section>

@@ -222,16 +222,16 @@ export function BlogPageContent() {
                     Featured Article
                   </p>
                 </div>
-                <Card className="border-2 rounded-xl overflow-hidden group transition-all hover:shadow-xl relative">
+                <Card className="border-2 rounded-xl overflow-hidden group transition-all hover:shadow-md relative">
                   {/* Decorative gradient background */}
-                  <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/5 via-violet-500/5 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/3 via-violet-500/3 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700" />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0 relative z-10">
                     <div className="relative aspect-video md:aspect-auto md:h-full min-h-[300px] overflow-hidden">
                       <Image
                         src={featuredPost.image}
                         alt={featuredPost.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent" />
                       <div className="absolute top-4 left-4">
@@ -246,7 +246,7 @@ export function BlogPageContent() {
                           {featuredPost.category}
                         </Badge>
                       </div>
-                      <CardTitle className="text-2xl md:text-3xl font-light mb-4 leading-tight group-hover:text-foreground transition-colors">
+                      <CardTitle className="text-2xl md:text-3xl font-light mb-4 leading-tight group-hover:text-foreground/90 transition-colors duration-300">
                         {featuredPost.title}
                       </CardTitle>
                       <CardDescription className="text-base leading-relaxed mb-6 flex-1">
@@ -266,10 +266,12 @@ export function BlogPageContent() {
                           <span>{featuredPost.readTime}</span>
                         </div>
                       </div>
-                      <Button variant="outline" className="font-normal w-fit group/btn">
-                        Read Article
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                      </Button>
+                      <Link href={`/blog/${featuredPost.slug}`}>
+                        <Button variant="outline" className="font-normal w-fit group/btn">
+                          Read Article
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </Card>
@@ -291,16 +293,16 @@ export function BlogPageContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regularPosts.map((post, index) => (
                 <ScrollAnimation key={post.id} delay={index * 100}>
-                  <Card className="border rounded-xl overflow-hidden flex flex-col h-full transition-all hover:shadow-xl hover:border-foreground/20 group relative">
+                  <Card className="border rounded-xl overflow-hidden flex flex-col h-full transition-all hover:shadow-md hover:border-foreground/10 group relative">
                     {/* Subtle gradient on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 via-violet-500/0 to-transparent opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-xl" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 via-violet-500/0 to-transparent opacity-0 group-hover:opacity-3 transition-opacity duration-700 rounded-xl" />
                     <div className="relative z-10 flex flex-col h-full">
                       <div className="relative aspect-video w-full overflow-hidden">
                         <Image
                           src={post.image}
                           alt={post.title}
                           fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-background/10 to-transparent" />
                         <div className="absolute top-3 right-3">
@@ -310,9 +312,9 @@ export function BlogPageContent() {
                         </div>
                       </div>
                       <CardHeader className="flex-1">
-                        <CardTitle className="text-xl font-light mb-3 leading-tight group-hover:text-foreground transition-colors">
-                          {post.title}
-                        </CardTitle>
+                      <CardTitle className="text-xl font-light mb-3 leading-tight group-hover:text-foreground/90 transition-colors duration-300">
+                        {post.title}
+                      </CardTitle>
                         <CardDescription className="text-sm leading-relaxed line-clamp-3">
                           {post.excerpt}
                         </CardDescription>
@@ -333,10 +335,12 @@ export function BlogPageContent() {
                             <Clock className="h-3 w-3" />
                             <span>{post.readTime}</span>
                           </div>
-                          <Button variant="ghost" size="sm" className="font-normal text-xs group/btn">
-                            Read More
-                            <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
-                          </Button>
+                          <Link href={`/blog/${post.slug}`}>
+                            <Button variant="ghost" size="sm" className="font-normal text-xs group/btn">
+                              Read More
+                              <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
+                            </Button>
+                          </Link>
                         </div>
                       </CardContent>
                     </div>
@@ -354,8 +358,8 @@ export function BlogPageContent() {
             <div className="mx-auto max-w-3xl text-center">
               <Card className="border-2 rounded-xl p-10 md:p-16 relative overflow-hidden group">
                 {/* Animated gradient background */}
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/10 via-violet-500/10 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/5 via-violet-500/5 to-transparent rounded-full blur-3xl opacity-30 group-hover:opacity-40 transition-opacity duration-700" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/5 via-transparent to-transparent rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-700" />
                 
                 {/* Decorative matrix animations */}
                 <div className="absolute top-8 right-8 opacity-5">
