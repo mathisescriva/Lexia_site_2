@@ -10,7 +10,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/  # Commented out to include build output for Hostinger deployment
 
 # production
 /build
