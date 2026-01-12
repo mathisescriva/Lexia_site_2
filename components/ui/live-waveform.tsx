@@ -38,7 +38,7 @@ export function LiveWaveform({
     setAmplitudes(initial)
 
     const animate = () => {
-      timeRef.current += 0.015
+      timeRef.current += 0.025 // Increased speed for more dynamic animation
       
       // Sine functions are periodic, so no need to reset - just use the value directly
       // Using modulo with a large period to prevent overflow while maintaining continuity
@@ -46,17 +46,19 @@ export function LiveWaveform({
 
       setAmplitudes((prev) =>
         prev.map((_, index) => {
-          // Create a regular, smooth wave pattern
-          const x = (index / prev.length) * Math.PI * 4
+          // Create a more dynamic wave pattern with more variation
+          const x = (index / prev.length) * Math.PI * 5 // More cycles for more variation
           const phase = x + time
           
-          // Regular sine wave with multiple harmonics
-          const wave1 = Math.sin(phase) * 0.12
-          const wave2 = Math.sin(phase * 1.5 + time * 0.5) * 0.06
+          // Multiple harmonics with increased amplitudes for more dynamism
+          const wave1 = Math.sin(phase) * 0.18
+          const wave2 = Math.sin(phase * 1.8 + time * 0.7) * 0.12
+          const wave3 = Math.sin(phase * 2.5 + time * 1.2) * 0.08
           const base = 0.2
-          const amplitude = base + wave1 + wave2
+          const amplitude = base + wave1 + wave2 + wave3
           
-          return Math.max(0.15, Math.min(0.4, amplitude))
+          // Increased range for more dynamic variation
+          return Math.max(0.12, Math.min(0.5, amplitude))
         })
       )
 
@@ -97,7 +99,7 @@ export function LiveWaveform({
         return (
           <div
             key={index}
-            className="bg-foreground transition-all duration-150 ease-linear"
+            className="bg-foreground transition-all duration-300 ease-out"
             style={{
               width: `${barWidth}px`,
               height: `${barHeight}px`,
