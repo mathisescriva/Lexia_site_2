@@ -319,7 +319,7 @@ export default function UseCasesPage() {
                     
                     <div className="px-6 pb-6 pt-0">
                       <div className="flex gap-3">
-                        <Link href={`/usecases#${useCase.id}`}>
+                        <Link href={`/usecases/${useCase.id}`}>
                           <Button className="font-normal text-xs flex-1" size="sm">
                             Learn More
                           </Button>

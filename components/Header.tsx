@@ -49,17 +49,19 @@ export function Header() {
                     Use Cases
                   </Link>
                   <a
-                    href="#gilbert"
+                    href="https://gilbert-assistant.fr"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block rounded-md px-3 py-2 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     Gilbert
                   </a>
-                  <a
-                    href="#api"
+                  <Link
+                    href="/api"
                     className="block rounded-md px-3 py-2 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     API
-                  </a>
+                  </Link>
                 </div>
               </>
             )}

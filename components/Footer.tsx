@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
 import { Logo } from "./Logo"
 
@@ -124,17 +125,19 @@ export function Footer() {
               <div className="flex flex-col gap-3">
                 <h3 className="text-sm font-normal">Product</h3>
                 <a 
-                  href="#gilbert" 
+                  href="https://gilbert-assistant.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
                 >
                   Gilbert
                 </a>
-                <a 
-                  href="#api" 
+                <Link 
+                  href="/api"
                   className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
                 >
                   API
-                </a>
+                </Link>
                 <a 
                   href="#usecases" 
                   className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
@@ -189,16 +192,9 @@ export function Footer() {
 
           {/* Footer bottom */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-8 pointer-events-auto">
-            <div className="flex flex-col gap-2">
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Lexia. All rights reserved.
-              </p>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                LEXIA FRANCE - SAS au capital de 500 € - RCS Laval 928 955 426<br />
-                MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE<br />
-                SIRET : 92895542600020
-              </p>
-            </div>
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Lexia. All rights reserved.
+            </p>
             <div className="flex gap-6">
               <a 
                 href="/terms" 
