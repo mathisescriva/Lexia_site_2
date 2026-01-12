@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://lexia.ai",
+    canonical: "https://www.lexiapro.fr",
   },
 }
 

@@ -319,7 +319,7 @@ export default function CareersPage() {
                               </div>
                             </div>
                           </div>
-                          <a href={`mailto:careers@lexia.ai?subject=Application for ${encodeURIComponent(job.title)}`}>
+                          <a href={`mailto:contacts@lexiapro.fr?subject=Application for ${encodeURIComponent(job.title)}`}>
                             <Button variant="outline" className="font-normal md:ml-4">
                               Apply
                               <ArrowRight className="ml-2 h-4 w-4" />
@@ -371,7 +371,7 @@ export default function CareersPage() {
                   </CardHeader>
                   <CardContent className="pt-4">
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <a href="mailto:careers@lexia.ai?subject=Spontaneous Application">
+                      <a href="mailto:contacts@lexiapro.fr?subject=Spontaneous Application">
                         <Button size="lg" variant="default" className="font-normal w-full sm:w-auto">
                           Send Your Resume
                         </Button>

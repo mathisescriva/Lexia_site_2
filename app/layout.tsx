@@ -11,6 +11,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Lexia - Pioneering Speech Technology",
   description: "Lexia is a deep tech company pioneering speech technology and reconciling speech with enterprise systems.",
+  icons: {
+    icon: [
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/favicon.png',
+    shortcut: '/favicon.png',
+  },
 }
 
 export default function RootLayout({

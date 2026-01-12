@@ -464,25 +464,25 @@ export function HomePage() {
         <section id="contact" className="container py-24 md:py-32" itemScope={true} itemType="https://schema.org/ContactPage">
           <ScrollAnimation>
             <div className="mx-auto max-w-5xl">
-              <div className="mb-12 flex items-center justify-center opacity-20">
-                <LiveWaveform
-                  active={true}
-                  processing={true}
-                  height={100}
-                  barWidth={3}
-                  barGap={2}
-                  mode="dynamic"
-                  fadeEdges={true}
-                  barColor="gray"
-                  historySize={120}
-                />
-              </div>
               <Card className="border-2 rounded-xl p-8 md:p-12 relative overflow-hidden group">
                 {/* Subtle gradient background */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/5 via-violet-500/5 to-transparent rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-700" />
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/5 via-transparent to-transparent rounded-full blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-700" />
                 
                 <div className="relative z-10 text-center">
+                  <div className="mb-8 flex items-center justify-center opacity-20">
+                    <LiveWaveform
+                      active={true}
+                      processing={true}
+                      height={100}
+                      barWidth={3}
+                      barGap={2}
+                      mode="dynamic"
+                      fadeEdges={true}
+                      barColor="gray"
+                      historySize={120}
+                    />
+                  </div>
                   <h2 className="mb-6 text-3xl font-light tracking-tight md:text-4xl lg:text-5xl" itemProp="name">
                     Get in Touch
                   </h2>

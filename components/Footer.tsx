@@ -172,13 +172,13 @@ export function Footer() {
               <div className="flex flex-col gap-3">
                 <h3 className="text-sm font-normal">Legal</h3>
                 <a 
-                  href="#privacy" 
+                  href="/privacy" 
                   className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
                 >
                   Privacy Policy
                 </a>
                 <a 
-                  href="#terms" 
+                  href="/terms" 
                   className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
                 >
                   Terms of Service
@@ -189,18 +189,25 @@ export function Footer() {
 
           {/* Footer bottom */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-8 pointer-events-auto">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Lexia. All rights reserved.
-            </p>
+            <div className="flex flex-col gap-2">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} Lexia. All rights reserved.
+              </p>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                LEXIA FRANCE - SAS au capital de 500 € - RCS Laval 928 955 426<br />
+                MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE<br />
+                SIRET : 92895542600020
+              </p>
+            </div>
             <div className="flex gap-6">
               <a 
-                href="#terms" 
+                href="/terms" 
                 className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
               >
                 Terms of Service
               </a>
               <a 
-                href="#privacy" 
+                href="/privacy" 
                 className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
               >
                 Privacy Policy
