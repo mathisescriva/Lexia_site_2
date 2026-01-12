@@ -266,11 +266,11 @@ export default function CareersPage() {
 
             {/* Filter Tabs */}
             <ScrollAnimation delay={100}>
-              <div className="mb-8 flex justify-center">
+              <div className="mb-8 flex justify-center px-4">
                 <Tabs value={activeFilter} onValueChange={(v) => setActiveFilter(v as JobCategory)} className="w-full max-w-2xl">
-                  <TabsList className="grid w-full grid-cols-4">
+                  <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-2 p-2 md:p-1 h-auto md:h-9">
                     {categories.map((category) => (
-                      <TabsTrigger key={category.id} value={category.id} className="text-xs">
+                      <TabsTrigger key={category.id} value={category.id} className="text-base md:text-sm px-4 py-3 md:px-3 md:py-1 whitespace-nowrap h-auto md:h-7">
                         {category.label}
                       </TabsTrigger>
                     ))}

@@ -68,7 +68,8 @@ export function Footer() {
                   maskSize: 'contain',
                   maskRepeat: 'no-repeat',
                   maskPosition: 'center',
-                  opacity: 0.2,
+                  opacity: isHovering ? 0.25 : 0.12,
+                  transition: 'opacity 0.3s ease',
                 }}
               />
               
@@ -76,7 +77,7 @@ export function Footer() {
               <div 
                 className="absolute inset-0"
                 style={{
-                  background: `radial-gradient(circle 200px at ${mousePosition.x}% ${mousePosition.y}%, rgba(255,255,255,${isHovering ? 0 : 1}) 0%, rgba(255,255,255,${isHovering ? 0.3 : 1}) 35%, rgba(255,255,255,${isHovering ? 0.6 : 1}) 50%, rgba(255,255,255,${isHovering ? 0.8 : 1}) 65%, white 75%, white 100%)`,
+                  background: `radial-gradient(circle 200px at ${mousePosition.x}% ${mousePosition.y}%, rgba(255,255,255,${isHovering ? 0 : 1}) 0%, rgba(255,255,255,${isHovering ? 0.2 : 1}) 35%, rgba(255,255,255,${isHovering ? 0.5 : 1}) 50%, rgba(255,255,255,${isHovering ? 0.7 : 1}) 65%, white 75%, white 100%)`,
                   WebkitMaskImage: `url('/logos/logo_lexia.webp')`,
                   WebkitMaskSize: 'contain',
                   WebkitMaskRepeat: 'no-repeat',
@@ -93,7 +94,7 @@ export function Footer() {
               <div 
                 className="absolute inset-0"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.04)',
+                  background: 'rgba(0, 0, 0, 0.7)',
                   WebkitMaskImage: `url('/logos/logo_lexia.webp')`,
                   WebkitMaskSize: 'contain',
                   WebkitMaskRepeat: 'no-repeat',
@@ -102,7 +103,7 @@ export function Footer() {
                   maskSize: 'contain',
                   maskRepeat: 'no-repeat',
                   maskPosition: 'center',
-                  opacity: 1,
+                  opacity: 0.05,
                 }}
               />
             </div>
@@ -159,12 +160,12 @@ export function Footer() {
                     >
                       Research
                     </a>
-                <a 
-                  href="#careers" 
+                <Link 
+                  href="/careers" 
                   className="text-sm text-muted-foreground transition-opacity hover:opacity-60"
                 >
                   Careers
-                </a>
+                </Link>
                 <a 
                   href="#blog" 
                   className="text-sm text-muted-foreground transition-opacity hover:opacity-60"

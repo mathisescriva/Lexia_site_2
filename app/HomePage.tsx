@@ -27,8 +27,8 @@ export function HomePage() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="container py-32 md:py-40" itemScope={true} itemType="https://schema.org/Organization">
-          <div className="relative flex items-start justify-center gap-8 md:gap-16">
+        <section className="container py-16 md:py-32 lg:py-40" itemScope={true} itemType="https://schema.org/Organization">
+          <div className="relative flex flex-col md:flex-row items-center md:items-start justify-center gap-0 md:gap-8 lg:gap-16">
             {/* Left Waveform */}
             <div className="hidden md:block opacity-10 pt-4">
               <LiveWaveform
@@ -44,20 +44,20 @@ export function HomePage() {
               />
             </div>
             
-            <div className="flex-1 max-w-4xl text-center">
-              <h1 className="mb-8 text-5xl font-light tracking-[-0.02em] md:text-6xl lg:text-7xl leading-[1.1]">
+            <div className="flex-1 w-full max-w-4xl text-center px-4 md:px-0">
+              <h1 className="mb-6 md:mb-8 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-[-0.02em] leading-[1.1]">
                 Reconciling{" "}
                 <span className="inline-block bg-gradient-to-r from-orange-500 via-red-500 via-blue-500 to-violet-500 bg-clip-text text-transparent">
                   Speech
                 </span>
                 <span className="block mt-2.5 font-extralight tracking-[-0.025em]">with Enterprise</span>
               </h1>
-              <p className="mb-12 text-lg leading-relaxed text-muted-foreground md:text-xl" itemProp="description">
+              <p className="mb-8 md:mb-12 text-base md:text-lg lg:text-xl leading-relaxed text-muted-foreground px-4 md:px-0" itemProp="description">
                 We are a deeptech company that transforms how enterprises interact with their systems through voice. 
                 We build speech-to-text solutions that integrate seamlessly into your workflows, enabling voice-activated 
                 CRM systems, automated call transcription, and intelligent meeting analysis.
               </p>
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row mb-16">
+              <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 sm:flex-row mb-12 md:mb-16">
                 <Link href="/contact">
                   <Button size="lg" variant="default" className="font-normal">
                     Get Started
@@ -124,9 +124,9 @@ export function HomePage() {
                   and drive innovation across their organizations.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 *:flex-1 *:flex *:flex-col">
-                <ScrollAnimation delay={50} itemScope={true} itemType="https://schema.org/Service">
-                  <Card className="overflow-hidden pt-0 border flex flex-col rounded-xl transition-opacity hover:opacity-90">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 *:flex-1 *:flex *:flex-col">
+                <ScrollAnimation delay={50}>
+                  <Card className="overflow-hidden pt-0 border flex flex-col rounded-xl transition-opacity hover:opacity-90" itemScope={true} itemType="https://schema.org/Service">
                     <CardContent className="px-0 flex-shrink-0">
                       <Image
                         src="/logos/image_illustration1.png"
@@ -153,8 +153,8 @@ export function HomePage() {
                     </CardFooter>
                   </Card>
                 </ScrollAnimation>
-                <ScrollAnimation delay={100} itemScope itemType="https://schema.org/Service">
-                  <Card className="overflow-hidden pt-0 border flex flex-col rounded-xl transition-opacity hover:opacity-90">
+                <ScrollAnimation delay={100}>
+                  <Card className="overflow-hidden pt-0 border flex flex-col rounded-xl transition-opacity hover:opacity-90" itemScope itemType="https://schema.org/Service">
                     <CardContent className="px-0 flex-shrink-0">
                       <Image
                         src="/logos/image_illustration2.png"
@@ -181,8 +181,8 @@ export function HomePage() {
                     </CardFooter>
                   </Card>
                 </ScrollAnimation>
-                <ScrollAnimation delay={150} itemScope itemType="https://schema.org/Service">
-                  <Card className="overflow-hidden pt-0 border flex flex-col rounded-xl transition-opacity hover:opacity-90">
+                <ScrollAnimation delay={150}>
+                  <Card className="overflow-hidden pt-0 border flex flex-col rounded-xl transition-opacity hover:opacity-90" itemScope itemType="https://schema.org/Service">
                     <CardContent className="px-0 flex-shrink-0">
                       <Image
                         src="/logos/image_illustration3.png"
@@ -239,8 +239,8 @@ export function HomePage() {
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <ScrollAnimation delay={50} itemScope={true} itemType="https://schema.org/Service">
-                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md">
+                <ScrollAnimation delay={50}>
+                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md" itemScope={true} itemType="https://schema.org/Service">
                     <div className="mb-4 flex items-center justify-center h-12">
                       <Matrix
                         rows={5}
@@ -262,8 +262,8 @@ export function HomePage() {
                     </CardHeader>
                   </Card>
                 </ScrollAnimation>
-                <ScrollAnimation delay={100} itemScope itemType="https://schema.org/Service">
-                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md">
+                <ScrollAnimation delay={100}>
+                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md" itemScope itemType="https://schema.org/Service">
                     <div className="mb-4 flex items-center justify-center h-12">
                       <Matrix
                         rows={5}
@@ -285,8 +285,8 @@ export function HomePage() {
                     </CardHeader>
                   </Card>
                 </ScrollAnimation>
-                <ScrollAnimation delay={150} itemScope itemType="https://schema.org/Service">
-                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md">
+                <ScrollAnimation delay={150}>
+                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md" itemScope itemType="https://schema.org/Service">
                     <div className="mb-4 flex items-center justify-center h-12">
                       <Matrix
                         rows={5}
@@ -308,8 +308,8 @@ export function HomePage() {
                     </CardHeader>
                   </Card>
                 </ScrollAnimation>
-                <ScrollAnimation delay={200} itemScope itemType="https://schema.org/Service">
-                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md">
+                <ScrollAnimation delay={200}>
+                  <Card className="border rounded-xl p-6 h-full flex flex-col transition-all hover:shadow-md" itemScope itemType="https://schema.org/Service">
                     <div className="mb-4 flex items-center justify-center h-12">
                       <Matrix
                         rows={5}
@@ -363,9 +363,9 @@ export function HomePage() {
               </div>
             </ScrollAnimation>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <ScrollAnimation delay={100} itemScope={true} itemType="https://schema.org/CreativeWork">
-                <Card className="border-2 rounded-xl overflow-hidden group relative h-full flex flex-col">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <ScrollAnimation delay={100}>
+                <Card className="border-2 rounded-xl overflow-hidden group relative h-full flex flex-col" itemScope={true} itemType="https://schema.org/CreativeWork">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <CardContent className="p-0">
                     <div className="relative h-48 overflow-hidden">
@@ -391,8 +391,8 @@ export function HomePage() {
                 </Card>
               </ScrollAnimation>
 
-              <ScrollAnimation delay={150} itemScope={true} itemType="https://schema.org/CreativeWork">
-                <Card className="border-2 rounded-xl overflow-hidden group relative h-full flex flex-col">
+              <ScrollAnimation delay={150}>
+                <Card className="border-2 rounded-xl overflow-hidden group relative h-full flex flex-col" itemScope={true} itemType="https://schema.org/CreativeWork">
                   <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <CardContent className="p-0">
                     <div className="relative h-48 overflow-hidden">
@@ -418,8 +418,8 @@ export function HomePage() {
                 </Card>
               </ScrollAnimation>
 
-              <ScrollAnimation delay={200} itemScope={true} itemType="https://schema.org/CreativeWork">
-                <Card className="border-2 rounded-xl overflow-hidden group relative h-full flex flex-col">
+              <ScrollAnimation delay={200}>
+                <Card className="border-2 rounded-xl overflow-hidden group relative h-full flex flex-col" itemScope={true} itemType="https://schema.org/CreativeWork">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <CardContent className="p-0">
                     <div className="relative h-48 overflow-hidden">
@@ -472,7 +472,7 @@ export function HomePage() {
                     height={60}
                     barWidth={2}
                     barGap={2}
-                    mode="dynamic"
+                    mode="static"
                     fadeEdges={true}
                     barColor="gray"
                     historySize={100}
@@ -512,7 +512,7 @@ export function HomePage() {
               <h2 className="mb-12 text-2xl font-light tracking-tight md:text-3xl text-center">
                 They are behind us
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
                 <ScrollAnimation delay={50}>
                   <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
                     <Image

@@ -109,11 +109,11 @@ export function UseCasePageContent({ useCase }: { useCase: UseCase }) {
           <div className="mx-auto max-w-5xl">
             <ScrollAnimation>
               <Tabs defaultValue="overview" className="w-full">
-                <TabsList className="grid w-full grid-cols-4 mb-8">
-                  <TabsTrigger value="overview" className="font-normal">Overview</TabsTrigger>
-                  <TabsTrigger value="features" className="font-normal">Features</TabsTrigger>
-                  <TabsTrigger value="benefits" className="font-normal">Benefits</TabsTrigger>
-                  <TabsTrigger value="examples" className="font-normal">Examples</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 gap-2 p-2 md:p-1 h-auto md:h-9 mb-8">
+                  <TabsTrigger value="overview" className="font-normal text-base md:text-sm px-4 py-3 md:px-3 md:py-1 whitespace-nowrap h-auto md:h-7">Overview</TabsTrigger>
+                  <TabsTrigger value="features" className="font-normal text-base md:text-sm px-4 py-3 md:px-3 md:py-1 whitespace-nowrap h-auto md:h-7">Features</TabsTrigger>
+                  <TabsTrigger value="benefits" className="font-normal text-base md:text-sm px-4 py-3 md:px-3 md:py-1 whitespace-nowrap h-auto md:h-7">Benefits</TabsTrigger>
+                  <TabsTrigger value="examples" className="font-normal text-base md:text-sm px-4 py-3 md:px-3 md:py-1 whitespace-nowrap h-auto md:h-7">Examples</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="overview" className="space-y-8">
@@ -228,7 +228,7 @@ export function UseCasePageContent({ useCase }: { useCase: UseCase }) {
                       height={80}
                       barWidth={3}
                       barGap={2}
-                      mode="dynamic"
+                      mode="static"
                       fadeEdges={true}
                       barColor="gray"
                       historySize={100}

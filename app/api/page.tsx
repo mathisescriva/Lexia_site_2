@@ -360,7 +360,7 @@ print(data['transcript'])`}
                       height={120}
                       barWidth={4}
                       barGap={2}
-                      mode="dynamic"
+                      mode="static"
                       fadeEdges={true}
                       barColor="gray"
                       historySize={140}
