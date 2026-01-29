@@ -162,3 +162,5 @@
 - **SVG** : Pour les formes vectorielles (scalables, performantes)
 - **Canvas** : Pour les systèmes de particules complexes (si nécessaire)
 
+
+

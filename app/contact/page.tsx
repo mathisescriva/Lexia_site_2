@@ -42,7 +42,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nProject Budget: ${formData.budget}\nHow did you find us: ${formData.source}\n\nMessage:\n${formData.message}`
     )
-    window.location.href = `mailto:contacts@lexiapro.fr?subject=${subject}&body=${body}`
+    window.location.href = `mailto:contact@lexiapro.fr?subject=${subject}&body=${body}`
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

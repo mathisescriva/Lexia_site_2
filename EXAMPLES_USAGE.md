@@ -219,3 +219,5 @@ import { GridPattern } from "@/components/ui/grid-pattern"
 4. **Accessibilité** : Respecter `prefers-reduced-motion` (à implémenter si nécessaire)
 5. **Opacité** : Rester entre 0.02 et 0.08 maximum pour rester subtil
 
+
+
