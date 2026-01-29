@@ -34,15 +34,58 @@ export default function ContactPage() {
     message: "",
     source: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Create mailto link with form data
-    const subject = encodeURIComponent("Contact from Lexia Website")
-    const body = encodeURIComponent(
-      `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nProject Budget: ${formData.budget}\nHow did you find us: ${formData.source}\n\nMessage:\n${formData.message}`
-    )
-    window.location.href = `mailto:contact@lexiapro.fr?subject=${subject}&body=${body}`
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+    setErrorMessage("")
+
+    try {
+      // Using FormSubmit - free service, no API key needed
+      const formDataToSend = new FormData()
+      formDataToSend.append("name", `${formData.firstName} ${formData.lastName}`)
+      formDataToSend.append("email", formData.email)
+      formDataToSend.append("budget", formData.budget || "Not specified")
+      formDataToSend.append("source", formData.source || "Not specified")
+      formDataToSend.append("message", formData.message)
+      formDataToSend.append("_subject", "Contact from Lexia Website")
+      formDataToSend.append("_captcha", "false")
+
+      const response = await fetch("https://formsubmit.co/ajax/contact@lexiapro.fr", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formDataToSend,
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        setSubmitStatus("success")
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          budget: "",
+          message: "",
+          source: "",
+        })
+      } else {
+        setSubmitStatus("error")
+        setErrorMessage(data.message || "Une erreur est survenue. Veuillez réessayer.")
+      }
+    } catch (error) {
+      setSubmitStatus("error")
+      setErrorMessage("Une erreur est survenue. Veuillez réessayer.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -282,12 +325,51 @@ export default function ContactPage() {
                           className="h-11"
                         />
                       </div>
+                      {submitStatus === "success" && (
+                        <div className="rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 p-4 flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
+                          <div className="flex-1">
+                            <p className="text-sm font-medium text-green-800 dark:text-green-200">
+                              Message envoyé avec succès !
+                            </p>
+                            <p className="text-xs text-green-700 dark:text-green-300 mt-1">
+                              Nous vous répondrons dans les plus brefs délais.
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
+                      {submitStatus === "error" && (
+                        <div className="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-4 flex items-start gap-3">
+                          <Mail className="h-5 w-5 text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0" />
+                          <div className="flex-1">
+                            <p className="text-sm font-medium text-red-800 dark:text-red-200">
+                              Erreur lors de l'envoi
+                            </p>
+                            <p className="text-xs text-red-700 dark:text-red-300 mt-1">
+                              {errorMessage || "Une erreur est survenue. Veuillez réessayer."}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+
                       <Button 
                         type="submit" 
                         size="lg" 
                         className="w-full font-normal"
+                        disabled={isSubmitting}
                       >
-                        Submit
+                        {isSubmitting ? (
+                          <>
+                            <span className="mr-2">Envoi en cours...</span>
+                            <div className="h-4 w-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                          </>
+                        ) : (
+                          <>
+                            <Send className="mr-2 h-4 w-4" />
+                            Envoyer
+                          </>
+                        )}
                       </Button>
                       <p className="text-xs text-muted-foreground leading-relaxed">
                         You acknowledge that you've reviewed and agreed to our{" "}
