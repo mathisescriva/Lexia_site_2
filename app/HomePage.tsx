@@ -8,7 +8,7 @@ import { Separator } from "@/components/ui/separator"
 import { LiveWaveform } from "@/components/ui/live-waveform"
 import { Matrix, wave, pulse, loader, snake } from "@/components/ui/matrix"
 import { ScrollAnimation } from "@/components/ScrollAnimation"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Shield, Server, Lock, Globe, Award, Zap, Target, TrendingUp, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -26,6 +26,20 @@ export function HomePage() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
+        {/* Announcement Banner */}
+        <div className="border-b bg-muted/30">
+          <div className="container py-2 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+            <Award className="h-3 w-3 flex-shrink-0" />
+            <p className="font-normal tracking-wide text-center">
+              <span className="hidden sm:inline">Lexia — </span>Laureat AMI Sphere Publique 2026
+            </p>
+            <a href="https://alliance.numerique.gouv.fr/cartographie/panorama-des-solutions-ia-sur-etagere-pour-les-administrations-publiques/" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex items-center gap-1 hover:text-foreground underline underline-offset-4 decoration-muted-foreground/30 hover:decoration-foreground/50 transition-colors ml-1">
+              Learn more
+              <ArrowRight className="h-2.5 w-2.5" />
+            </a>
+          </div>
+        </div>
+
         {/* Hero Section */}
         <section className="container py-16 md:py-32 lg:py-40" itemScope={true} itemType="https://schema.org/Organization">
           <div className="relative flex flex-col md:flex-row items-center md:items-start justify-center gap-0 md:gap-8 lg:gap-16">
@@ -107,6 +121,71 @@ export function HomePage() {
               />
             </div>
           </div>
+        </section>
+
+        <Separator />
+
+        {/* Key Metrics Section */}
+        <section className="container py-20 md:py-28">
+          <ScrollAnimation>
+            <div className="mx-auto max-w-6xl">
+              <div className="mb-16 text-center">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border bg-muted/30 text-xs font-medium text-muted-foreground uppercase tracking-wider mb-6">
+                  <Zap className="h-3 w-3" />
+                  Performance
+                </div>
+                <h2 className="text-3xl font-light tracking-tight md:text-4xl lg:text-5xl">
+                  Built for Enterprise Scale
+                </h2>
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <ScrollAnimation delay={50}>
+                  <div className="text-center p-6 rounded-xl border bg-gradient-to-b from-muted/20 to-transparent hover:shadow-md transition-shadow">
+                    <div className="text-4xl md:text-5xl font-extralight tracking-tight bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-3">
+                      +99%
+                    </div>
+                    <p className="text-sm font-medium mb-1">Accuracy</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      On domain-specific enterprise jargon and technical vocabulary
+                    </p>
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation delay={100}>
+                  <div className="text-center p-6 rounded-xl border bg-gradient-to-b from-muted/20 to-transparent hover:shadow-md transition-shadow">
+                    <div className="text-4xl md:text-5xl font-extralight tracking-tight bg-gradient-to-r from-red-500 to-violet-500 bg-clip-text text-transparent mb-3">
+                      &lt;200ms
+                    </div>
+                    <p className="text-sm font-medium mb-1">Latency</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      Real-time transcription with ultra-low latency processing
+                    </p>
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation delay={150}>
+                  <div className="text-center p-6 rounded-xl border bg-gradient-to-b from-muted/20 to-transparent hover:shadow-md transition-shadow">
+                    <div className="text-4xl md:text-5xl font-extralight tracking-tight bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent mb-3">
+                      40+
+                    </div>
+                    <p className="text-sm font-medium mb-1">Languages</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      Multilingual support with native-level accuracy across languages
+                    </p>
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation delay={200}>
+                  <div className="text-center p-6 rounded-xl border bg-gradient-to-b from-muted/20 to-transparent hover:shadow-md transition-shadow">
+                    <div className="text-4xl md:text-5xl font-extralight tracking-tight bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent mb-3">
+                      100%
+                    </div>
+                    <p className="text-sm font-medium mb-1">Sovereign</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
+                      Data stays in your infrastructure — on-premise or private cloud
+                    </p>
+                  </div>
+                </ScrollAnimation>
+              </div>
+            </div>
+          </ScrollAnimation>
         </section>
 
         <Separator />
@@ -347,6 +426,106 @@ export function HomePage() {
 
         <Separator />
 
+        {/* Security & Compliance Section */}
+        <section className="container py-24 md:py-32">
+          <ScrollAnimation>
+            <div className="mx-auto max-w-6xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Left - Content */}
+                <div>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border bg-muted/30 text-xs font-medium text-muted-foreground uppercase tracking-wider mb-6">
+                    <Shield className="h-3 w-3" />
+                    Security & Compliance
+                  </div>
+                  <h2 className="mb-6 text-3xl font-light tracking-tight md:text-4xl">
+                    Your Data,{" "}
+                    <span className="font-extralight">Your Rules</span>
+                  </h2>
+                  <p className="text-base leading-relaxed text-muted-foreground mb-8">
+                    We understand that enterprise data is sensitive. That is why Lexia is built 
+                    from the ground up with security, sovereignty, and compliance at its core. 
+                    Deploy on your terms — cloud, edge, or fully on-premise.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-lg border flex items-center justify-center flex-shrink-0 bg-muted/30">
+                        <Server className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium mb-0.5">Edge & On-Premise Deployment</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          Run our models directly on your infrastructure. No data ever leaves your environment — 
+                          full air-gap compatibility for the most sensitive use cases.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-lg border flex items-center justify-center flex-shrink-0 bg-muted/30">
+                        <Lock className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium mb-0.5">End-to-End Encryption</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          All data is encrypted in transit and at rest. Zero data retention policy — 
+                          audio is processed and immediately discarded.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-lg border flex items-center justify-center flex-shrink-0 bg-muted/30">
+                        <Globe className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium mb-0.5">GDPR & Regulatory Compliance</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          Fully GDPR compliant with European data hosting. 
+                          Built to meet the strictest regulatory requirements for financial, healthcare, and public sectors.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right - Visual badges grid */}
+                <ScrollAnimation delay={100}>
+                  <div className="grid grid-cols-2 gap-4">
+                    <Card className="border-2 rounded-xl p-6 text-center hover:shadow-md transition-shadow bg-gradient-to-br from-muted/10 to-transparent">
+                      <div className="w-12 h-12 mx-auto rounded-full border-2 flex items-center justify-center mb-4">
+                        <Shield className="h-6 w-6" />
+                      </div>
+                      <p className="text-sm font-medium mb-1">GDPR</p>
+                      <p className="text-xs text-muted-foreground">Compliant</p>
+                    </Card>
+                    <Card className="border-2 rounded-xl p-6 text-center hover:shadow-md transition-shadow bg-gradient-to-br from-muted/10 to-transparent">
+                      <div className="w-12 h-12 mx-auto rounded-full border-2 flex items-center justify-center mb-4">
+                        <Server className="h-6 w-6" />
+                      </div>
+                      <p className="text-sm font-medium mb-1">On-Premise</p>
+                      <p className="text-xs text-muted-foreground">Ready</p>
+                    </Card>
+                    <Card className="border-2 rounded-xl p-6 text-center hover:shadow-md transition-shadow bg-gradient-to-br from-muted/10 to-transparent">
+                      <div className="w-12 h-12 mx-auto rounded-full border-2 flex items-center justify-center mb-4">
+                        <Lock className="h-6 w-6" />
+                      </div>
+                      <p className="text-sm font-medium mb-1">Zero Retention</p>
+                      <p className="text-xs text-muted-foreground">Policy</p>
+                    </Card>
+                    <Card className="border-2 rounded-xl p-6 text-center hover:shadow-md transition-shadow bg-gradient-to-br from-muted/10 to-transparent">
+                      <div className="w-12 h-12 mx-auto rounded-full border-2 flex items-center justify-center mb-4">
+                        <Globe className="h-6 w-6" />
+                      </div>
+                      <p className="text-sm font-medium mb-1">Made in France</p>
+                      <p className="text-xs text-muted-foreground">Sovereign</p>
+                    </Card>
+                  </div>
+                </ScrollAnimation>
+              </div>
+            </div>
+          </ScrollAnimation>
+        </section>
+
+        <Separator />
+
         {/* Research & Development Section */}
         <section id="research" className="container py-24 md:py-32" itemScope={true} itemType="https://schema.org/ResearchProject">
           <div className="mx-auto max-w-6xl">
@@ -512,48 +691,70 @@ export function HomePage() {
               <h2 className="mb-12 text-2xl font-light tracking-tight md:text-3xl text-center">
                 They are behind us
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center justify-items-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center max-w-4xl mx-auto">
                 <ScrollAnimation delay={50}>
-                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity p-4">
                     <Image
                       src="/logos/BPI.png"
                       alt="BPI France"
-                      width={150}
-                      height={80}
-                      className="h-16 w-auto object-contain"
+                      width={180}
+                      height={90}
+                      className="h-14 w-auto object-contain"
                     />
                   </div>
                 </ScrollAnimation>
                 <ScrollAnimation delay={100}>
-                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity p-4">
                     <Image
                       src="/logos/LMT.jpg"
                       alt="LMT"
-                      width={150}
-                      height={80}
-                      className="h-16 w-auto object-contain"
+                      width={180}
+                      height={90}
+                      className="h-14 w-auto object-contain"
                     />
                   </div>
                 </ScrollAnimation>
                 <ScrollAnimation delay={150}>
-                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity p-4">
                     <Image
                       src="/logos/logo-french-tech.png"
                       alt="French Tech"
-                      width={150}
-                      height={80}
-                      className="h-16 w-auto object-contain"
+                      width={180}
+                      height={90}
+                      className="h-14 w-auto object-contain"
                     />
                   </div>
                 </ScrollAnimation>
                 <ScrollAnimation delay={200}>
-                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity p-4">
                     <Image
                       src="/logos/logo_IA_lab.webp"
                       alt="Intelligence Lab of ECE"
-                      width={150}
-                      height={80}
-                      className="h-16 w-auto object-contain"
+                      width={180}
+                      height={90}
+                      className="h-14 w-auto object-contain"
+                    />
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation delay={250}>
+                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity p-4">
+                    <Image
+                      src="/logos/HUB-LogoSeul-Couleurs.png"
+                      alt="HUB France IA"
+                      width={180}
+                      height={90}
+                      className="h-14 w-auto object-contain"
+                    />
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation delay={300}>
+                  <div className="flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity p-4">
+                    <Image
+                      src="/logos/Systematic-Logo-2019-PNG.png"
+                      alt="Systematic Paris Region Deep Tech Ecosystem"
+                      width={180}
+                      height={90}
+                      className="h-14 w-auto object-contain"
                     />
                   </div>
                 </ScrollAnimation>

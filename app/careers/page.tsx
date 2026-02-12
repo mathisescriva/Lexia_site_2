@@ -9,8 +9,12 @@ import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import { ScrollAnimation } from "@/components/ScrollAnimation"
-import { MapPin, Clock, Users, Sparkles, CheckCircle2, ArrowRight, Microscope, TrendingUp, Users2, ArrowUpRight, Wrench, Briefcase } from "lucide-react"
+import { MapPin, Clock, Users, Sparkles, CheckCircle2, ArrowRight, Microscope, TrendingUp, Users2, ArrowUpRight, Wrench, Briefcase, Send, Loader2, Paperclip, Link2, FileText } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -72,6 +76,74 @@ const jobOpenings = [
 
 export default function CareersPage() {
   const [activeFilter, setActiveFilter] = useState<JobCategory>("all")
+  const [applyModalOpen, setApplyModalOpen] = useState(false)
+  const [applyJobTitle, setApplyJobTitle] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [cvFile, setCvFile] = useState<File | null>(null)
+  const [coverLetterFile, setCoverLetterFile] = useState<File | null>(null)
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    linkedin: "",
+    portfolio: "",
+    message: "",
+  })
+
+  const openApplyModal = (jobTitle: string) => {
+    setApplyJobTitle(jobTitle)
+    setSubmitStatus("idle")
+    setCvFile(null)
+    setCoverLetterFile(null)
+    setFormData({ firstName: "", lastName: "", email: "", phone: "", linkedin: "", portfolio: "", message: "" })
+    setApplyModalOpen(true)
+  }
+
+  const handleApplySubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      const formDataToSend = new FormData()
+      formDataToSend.append("name", `${formData.firstName} ${formData.lastName}`)
+      formDataToSend.append("email", formData.email)
+      formDataToSend.append("phone", formData.phone || "Not specified")
+      formDataToSend.append("LinkedIn", formData.linkedin || "Not provided")
+      formDataToSend.append("Portfolio / Website", formData.portfolio || "Not provided")
+      formDataToSend.append("message", formData.message)
+      formDataToSend.append("_subject", `Application: ${applyJobTitle}`)
+      formDataToSend.append("_captcha", "false")
+      formDataToSend.append("_template", "table")
+
+      if (cvFile) {
+        formDataToSend.append("attachment", cvFile, cvFile.name)
+      }
+      if (coverLetterFile) {
+        formDataToSend.append("attachment", coverLetterFile, coverLetterFile.name)
+      }
+
+      const response = await fetch("https://formsubmit.co/ajax/contact@lexiapro.fr", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formDataToSend,
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        setSubmitStatus("success")
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch {
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const categories = [
     { id: "all" as JobCategory, label: "All Positions" },
@@ -319,12 +391,14 @@ export default function CareersPage() {
                               </div>
                             </div>
                           </div>
-                          <a href={`mailto:contacts@lexiapro.fr?subject=Application for ${encodeURIComponent(job.title)}`}>
-                            <Button variant="outline" className="font-normal md:ml-4">
-                              Apply
-                              <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                          </a>
+                          <Button 
+                            variant="outline" 
+                            className="font-normal md:ml-4"
+                            onClick={() => openApplyModal(job.title)}
+                          >
+                            Apply
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
                         </div>
                       </CardHeader>
                       <Separator className="mx-6" />
@@ -371,11 +445,14 @@ export default function CareersPage() {
                   </CardHeader>
                   <CardContent className="pt-4">
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                      <a href="mailto:contacts@lexiapro.fr?subject=Spontaneous Application">
-                        <Button size="lg" variant="default" className="font-normal w-full sm:w-auto">
-                          Send Your Resume
-                        </Button>
-                      </a>
+                      <Button 
+                        size="lg" 
+                        variant="default" 
+                        className="font-normal w-full sm:w-auto"
+                        onClick={() => openApplyModal("Spontaneous Application")}
+                      >
+                        Send Your Resume
+                      </Button>
                       <Link href="/contact">
                         <Button size="lg" variant="outline" className="font-normal w-full sm:w-auto">
                           Contact Us
@@ -407,6 +484,225 @@ export default function CareersPage() {
           </ScrollAnimation>
         </section>
       </main>
+
+      {/* Apply Modal */}
+      <Dialog open={applyModalOpen} onOpenChange={setApplyModalOpen}>
+        <DialogContent className="sm:max-w-[540px] max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-light">
+              {applyJobTitle === "Spontaneous Application" ? "Spontaneous Application" : `Apply for ${applyJobTitle}`}
+            </DialogTitle>
+            <DialogDescription className="text-sm text-muted-foreground">
+              Fill in the form below and we will get back to you as soon as possible.
+            </DialogDescription>
+          </DialogHeader>
+
+          {submitStatus === "success" ? (
+            <div className="flex flex-col items-center justify-center py-8 gap-4">
+              <div className="w-14 h-14 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+                <CheckCircle2 className="h-7 w-7 text-green-600 dark:text-green-400" />
+              </div>
+              <div className="text-center">
+                <p className="text-lg font-light mb-1">Application sent!</p>
+                <p className="text-sm text-muted-foreground">
+                  Thank you for your interest. We will review your application and get back to you shortly.
+                </p>
+              </div>
+              <Button 
+                variant="outline" 
+                className="mt-4 font-normal"
+                onClick={() => setApplyModalOpen(false)}
+              >
+                Close
+              </Button>
+            </div>
+          ) : (
+            <form onSubmit={handleApplySubmit} className="space-y-4 mt-2">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="apply-firstName" className="text-sm font-normal">
+                    First Name <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="apply-firstName"
+                    required
+                    placeholder="John"
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="apply-lastName" className="text-sm font-normal">
+                    Last Name <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="apply-lastName"
+                    required
+                    placeholder="Doe"
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="apply-email" className="text-sm font-normal">
+                  Email <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  id="apply-email"
+                  type="email"
+                  required
+                  placeholder="john.doe@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="apply-phone" className="text-sm font-normal">
+                  Phone
+                </Label>
+                <Input
+                  id="apply-phone"
+                  type="tel"
+                  placeholder="+33 6 12 34 56 78"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                />
+              </div>
+
+              {/* File uploads */}
+              <div className="space-y-3 rounded-lg border p-4 bg-muted/20">
+                <p className="text-xs font-normal text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
+                  <Paperclip className="h-3 w-3" />
+                  Attachments (optional)
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="apply-cv" className="text-sm font-normal flex items-center gap-1.5">
+                      <FileText className="h-3.5 w-3.5 text-muted-foreground" />
+                      CV / Resume
+                    </Label>
+                    <div className="relative">
+                      <Input
+                        id="apply-cv"
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        className="text-xs file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:bg-muted file:text-muted-foreground hover:file:bg-muted/80 cursor-pointer"
+                        onChange={(e) => setCvFile(e.target.files?.[0] || null)}
+                      />
+                    </div>
+                    {cvFile && (
+                      <p className="text-xs text-muted-foreground truncate">{cvFile.name}</p>
+                    )}
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="apply-cover-letter" className="text-sm font-normal flex items-center gap-1.5">
+                      <FileText className="h-3.5 w-3.5 text-muted-foreground" />
+                      Cover Letter
+                    </Label>
+                    <div className="relative">
+                      <Input
+                        id="apply-cover-letter"
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        className="text-xs file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:bg-muted file:text-muted-foreground hover:file:bg-muted/80 cursor-pointer"
+                        onChange={(e) => setCoverLetterFile(e.target.files?.[0] || null)}
+                      />
+                    </div>
+                    {coverLetterFile && (
+                      <p className="text-xs text-muted-foreground truncate">{coverLetterFile.name}</p>
+                    )}
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground">PDF, DOC, or DOCX — max 5 MB each</p>
+              </div>
+
+              {/* External links */}
+              <div className="space-y-3 rounded-lg border p-4 bg-muted/20">
+                <p className="text-xs font-normal text-muted-foreground uppercase tracking-wider flex items-center gap-1.5">
+                  <Link2 className="h-3 w-3" />
+                  Links (optional)
+                </p>
+                <div className="space-y-3">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="apply-linkedin" className="text-sm font-normal">
+                      LinkedIn
+                    </Label>
+                    <Input
+                      id="apply-linkedin"
+                      type="url"
+                      placeholder="https://linkedin.com/in/yourprofile"
+                      value={formData.linkedin}
+                      onChange={(e) => setFormData({ ...formData, linkedin: e.target.value })}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="apply-portfolio" className="text-sm font-normal">
+                      Portfolio / GitHub / Website
+                    </Label>
+                    <Input
+                      id="apply-portfolio"
+                      type="url"
+                      placeholder="https://github.com/yourprofile"
+                      value={formData.portfolio}
+                      onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="apply-message" className="text-sm font-normal">
+                  Message <span className="text-red-500">*</span>
+                </Label>
+                <Textarea
+                  id="apply-message"
+                  required
+                  placeholder="Tell us about yourself, your experience, and why you want to join Lexia..."
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                />
+              </div>
+
+              {submitStatus === "error" && (
+                <div className="rounded-lg border border-red-200 bg-red-50 dark:bg-red-900/20 dark:border-red-800 p-3">
+                  <p className="text-sm text-red-600 dark:text-red-400">
+                    An error occurred. Please try again or email us directly at contact@lexiapro.fr.
+                  </p>
+                </div>
+              )}
+
+              <div className="flex justify-end gap-3 pt-2">
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  className="font-normal"
+                  onClick={() => setApplyModalOpen(false)}
+                >
+                  Cancel
+                </Button>
+                <Button type="submit" className="font-normal" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Application
+                    </>
+                  )}
+                </Button>
+              </div>
+            </form>
+          )}
+        </DialogContent>
+      </Dialog>
+
       <Footer />
     </div>
   )

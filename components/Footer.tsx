@@ -1,111 +1,203 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useCallback, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
 import { Logo } from "./Logo"
 
 export function Footer() {
-  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 })
+  const [smoothPosition, setSmoothPosition] = useState({ x: 50, y: 50 })
   const [isHovering, setIsHovering] = useState(false)
+  const [hoverIntensity, setHoverIntensity] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const logoContainerRef = useRef<HTMLDivElement>(null)
+  const targetPos = useRef({ x: 50, y: 50 })
+  const animationRef = useRef<number>(0)
+  const hasEntered = useRef(false)
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!logoContainerRef.current) return
-    
+  // Smooth interpolation for cursor position
+  useEffect(() => {
+    const animate = () => {
+      setSmoothPosition(prev => ({
+        x: prev.x + (targetPos.current.x - prev.x) * 0.12,
+        y: prev.y + (targetPos.current.y - prev.y) * 0.12,
+      }))
+      animationRef.current = requestAnimationFrame(animate)
+    }
+    animationRef.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animationRef.current)
+  }, [])
+
+  // Smooth hover intensity transition
+  useEffect(() => {
+    const target = isHovering ? 1 : 0
+    const step = () => {
+      setHoverIntensity(prev => {
+        const next = prev + (target - prev) * 0.08
+        if (Math.abs(next - target) < 0.01) return target
+        requestAnimationFrame(step)
+        return next
+      })
+    }
+    requestAnimationFrame(step)
+  }, [isHovering])
+
+  const getRelativePosition = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!logoContainerRef.current) return { x: 50, y: 50 }
     const logoRect = logoContainerRef.current.getBoundingClientRect()
-    
-    // Calculate position relative to the logo container (centered)
-    const x = Math.max(0, Math.min(100, ((e.clientX - logoRect.left) / logoRect.width) * 100))
-    const y = Math.max(0, Math.min(100, ((e.clientY - logoRect.top) / logoRect.height) * 100))
-    
-    setMousePosition({ x, y })
+    return {
+      x: Math.max(0, Math.min(100, ((e.clientX - logoRect.left) / logoRect.width) * 100)),
+      y: Math.max(0, Math.min(100, ((e.clientY - logoRect.top) / logoRect.height) * 100)),
+    }
+  }, [])
+
+  const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    // Snap smooth position to cursor immediately on enter (no lerp from center)
+    const pos = getRelativePosition(e)
+    targetPos.current = pos
+    setSmoothPosition(pos)
+    hasEntered.current = true
+    setIsHovering(true)
+  }, [getRelativePosition])
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    targetPos.current = getRelativePosition(e)
+  }, [getRelativePosition])
+
+  const handleMouseLeave = useCallback(() => {
+    hasEntered.current = false
+    setIsHovering(false)
+  }, [])
+
+  const revealRadius = 280 + hoverIntensity * 80
+  const glowRadius = revealRadius * 1.6
+
+  // Combined mask: logo shape intersected with radial cursor area
+  const revealMask = {
+    WebkitMaskImage: `url('/logos/logo_lexia_hq.png'), radial-gradient(ellipse ${revealRadius}px ${revealRadius * 0.8}px at ${smoothPosition.x}% ${smoothPosition.y}%, black 0%, black 30%, transparent 80%)`,
+    WebkitMaskSize: 'contain, 100% 100%',
+    WebkitMaskRepeat: 'no-repeat, no-repeat',
+    WebkitMaskPosition: 'center, center',
+    WebkitMaskComposite: 'source-in' as const,
+    maskImage: `url('/logos/logo_lexia_hq.png'), radial-gradient(ellipse ${revealRadius}px ${revealRadius * 0.8}px at ${smoothPosition.x}% ${smoothPosition.y}%, black 0%, black 30%, transparent 80%)`,
+    maskSize: 'contain, 100% 100%',
+    maskRepeat: 'no-repeat, no-repeat',
+    maskPosition: 'center, center',
+    maskComposite: 'intersect' as const,
   }
 
-  // Calculate mask opacity based on distance from mouse
-  const getMaskOpacity = (px: number, py: number) => {
-    if (!isHovering) return 1
-    
-    const dx = px - mousePosition.x
-    const dy = py - mousePosition.y
-    const distance = Math.sqrt(dx * dx + dy * dy)
-    const maxDistance = 200 // blob radius
-    
-    if (distance > maxDistance) return 1
-    if (distance < maxDistance * 0.35) return 0
-    
-    // Smooth transition between 35% and 100% of maxDistance
-    const normalized = (distance - maxDistance * 0.35) / (maxDistance * 0.65)
-    return normalized
+  const glowMask = {
+    WebkitMaskImage: `url('/logos/logo_lexia_hq.png'), radial-gradient(ellipse ${glowRadius}px ${glowRadius * 0.7}px at ${smoothPosition.x}% ${smoothPosition.y}%, black 0%, black 20%, transparent 70%)`,
+    WebkitMaskSize: 'contain, 100% 100%',
+    WebkitMaskRepeat: 'no-repeat, no-repeat',
+    WebkitMaskPosition: 'center, center',
+    WebkitMaskComposite: 'source-in' as const,
+    maskImage: `url('/logos/logo_lexia_hq.png'), radial-gradient(ellipse ${glowRadius}px ${glowRadius * 0.7}px at ${smoothPosition.x}% ${smoothPosition.y}%, black 0%, black 20%, transparent 70%)`,
+    maskSize: 'contain, 100% 100%',
+    maskRepeat: 'no-repeat, no-repeat',
+    maskPosition: 'center, center',
+    maskComposite: 'intersect' as const,
+  }
+
+  const logoMask = {
+    WebkitMaskImage: `url('/logos/logo_lexia_hq.png')`,
+    WebkitMaskSize: 'contain' as const,
+    WebkitMaskRepeat: 'no-repeat' as const,
+    WebkitMaskPosition: 'center' as const,
+    maskImage: `url('/logos/logo_lexia_hq.png')`,
+    maskSize: 'contain' as const,
+    maskRepeat: 'no-repeat' as const,
+    maskPosition: 'center' as const,
   }
 
   return (
     <footer className="w-full border-t bg-background">
+      <style jsx>{`
+        @keyframes logoPulse {
+          0%, 100% { opacity: 0.03; }
+          50% { opacity: 0.055; }
+        }
+        @keyframes glowPulse {
+          0%, 100% { opacity: 0.15; transform: scale(1); }
+          50% { opacity: 0.25; transform: scale(1.02); }
+        }
+      `}</style>
       <div 
         ref={containerRef}
         className="container py-16 md:py-24 relative"
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
         
-        {/* Logo en arrière-plan, centré et semi-transparent - plus grand avec dégradé */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+        {/* Logo background layers */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
           <div ref={logoContainerRef} className="relative w-full max-w-7xl h-full scale-[1.05]">
             <div className="relative w-full h-full">
-              {/* Logo coloré avec dégradé horizontal */}
-              <div 
-                className="absolute inset-0"
-                style={{
-                  background: `linear-gradient(to right, #d97706 0%, #b91c1c 35%, #4f46e5 70%, #4338ca 100%)`,
-                  WebkitMaskImage: `url('/logos/logo_lexia.webp')`,
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center',
-                  maskImage: `url('/logos/logo_lexia.webp')`,
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  opacity: isHovering ? 0.25 : 0.12,
-                  transition: 'opacity 0.3s ease',
-                }}
-              />
               
-              {/* Masque blanc avec opacité variable selon la position de la souris (cache le logo coloré) */}
+              {/* Layer 1: Very faint gray logo with breathing animation (default state) */}
               <div 
                 className="absolute inset-0"
                 style={{
-                  background: `radial-gradient(circle 200px at ${mousePosition.x}% ${mousePosition.y}%, rgba(255,255,255,${isHovering ? 0 : 1}) 0%, rgba(255,255,255,${isHovering ? 0.2 : 1}) 35%, rgba(255,255,255,${isHovering ? 0.5 : 1}) 50%, rgba(255,255,255,${isHovering ? 0.7 : 1}) 65%, white 75%, white 100%)`,
-                  WebkitMaskImage: `url('/logos/logo_lexia.webp')`,
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center',
-                  maskImage: `url('/logos/logo_lexia.webp')`,
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  opacity: 1,
+                  ...logoMask,
+                  background: 'rgba(0, 0, 0, 0.4)',
+                  opacity: 0.04 + (0.04 - 0.04 * hoverIntensity),
+                  animation: hoverIntensity < 0.1 ? 'logoPulse 5s ease-in-out infinite' : 'none',
+                  transition: 'opacity 0.4s ease',
                 }}
               />
-              
-              {/* Logo grisé par défaut (toujours visible au-dessus) */}
+
+              {/* Layer 2: Colored gradient - revealed ONLY in cursor area via mask-composite */}
               <div 
                 className="absolute inset-0"
                 style={{
-                  background: 'rgba(0, 0, 0, 0.7)',
-                  WebkitMaskImage: `url('/logos/logo_lexia.webp')`,
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center',
-                  maskImage: `url('/logos/logo_lexia.webp')`,
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  opacity: 0.05,
+                  ...revealMask,
+                  background: `linear-gradient(to right, 
+                    #121240 0%, 
+                    #1e1652 15%, 
+                    #4a1942 30%, 
+                    #7a1530 42%, 
+                    #9e1a1a 55%, 
+                    #b5391a 68%, 
+                    #c45a12 80%, 
+                    #c47a0a 92%, 
+                    #b8860b 100%)`,
+                  opacity: hoverIntensity * 0.55,
                 }}
               />
+
+              {/* Layer 3: Subtle warm glow halo around cursor */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  ...glowMask,
+                  background: `linear-gradient(to right, 
+                    rgba(18, 18, 64, 0.6) 0%, 
+                    rgba(158, 26, 26, 0.5) 50%, 
+                    rgba(180, 120, 10, 0.4) 100%)`,
+                  opacity: hoverIntensity * 0.25,
+                }}
+              />
+
+              {/* Layer 4: Bright torch core at cursor */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  ...revealMask,
+                  background: `
+                    radial-gradient(
+                      circle ${revealRadius * 0.25}px at ${smoothPosition.x}% ${smoothPosition.y}%, 
+                      rgba(255, 255, 255, 0.4) 0%,
+                      rgba(255, 255, 255, 0.1) 50%,
+                      transparent 100%
+                    )
+                  `,
+                  mixBlendMode: 'overlay',
+                  opacity: hoverIntensity * 0.8,
+                }}
+              />
+
             </div>
           </div>
         </div>

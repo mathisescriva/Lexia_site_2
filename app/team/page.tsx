@@ -266,6 +266,74 @@ export default function TeamPage() {
 
         <Separator />
 
+        {/* Excellence & Competitions Section */}
+        <section className="container py-24 md:py-32">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <ScrollAnimation>
+                <div>
+                  <div className="text-xs font-normal text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-4">
+                    Proven Excellence
+                  </div>
+                  <h2 className="mb-6 text-3xl font-light tracking-tight md:text-4xl">
+                    Forged in{" "}
+                    <span className="font-extralight">Competition</span>
+                  </h2>
+                  <p className="text-base leading-relaxed text-muted-foreground mb-6">
+                    Our team is composed of exceptional profiles who have consistently 
+                    proven themselves in the most prestigious global competitions. From 
+                    international hackathons to AI challenges, we continuously push 
+                    our limits and benchmark our skills against the best in the world.
+                  </p>
+                  <p className="text-base leading-relaxed text-muted-foreground mb-8">
+                    We believe that excellence is not just claimed — it is demonstrated. 
+                    That is why we actively participate in top-tier hackathons and 
+                    competitions worldwide, earning recognition and validating 
+                    our technical expertise on the global stage.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <div className="px-4 py-2 rounded-full border text-sm text-muted-foreground">
+                      International Hackathons
+                    </div>
+                    <div className="px-4 py-2 rounded-full border text-sm text-muted-foreground">
+                      AI Challenges
+                    </div>
+                    <div className="px-4 py-2 rounded-full border text-sm text-muted-foreground">
+                      Top-Tier Profiles
+                    </div>
+                  </div>
+                </div>
+              </ScrollAnimation>
+
+              <ScrollAnimation delay={100}>
+                <Card className="border-2 rounded-xl overflow-hidden group transition-all duration-300 hover:shadow-lg">
+                  <CardContent className="p-0">
+                    <div className="relative w-full aspect-[4/3]">
+                      <Image
+                        src="/logos/hackathon_stockholm.jpeg"
+                        alt="Lexia team at Luma Hackathon in Stockholm"
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <p className="text-sm font-medium text-white drop-shadow-lg">
+                          Luma Hackathon — Stockholm
+                        </p>
+                        <p className="text-xs text-white/80 drop-shadow-lg mt-1">
+                          Competing among the best AI teams in Europe
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollAnimation>
+            </div>
+          </div>
+        </section>
+
+        <Separator />
+
         {/* Location & CTA Combined */}
         <section className="container py-24 md:py-32">
           <div className="mx-auto max-w-5xl">

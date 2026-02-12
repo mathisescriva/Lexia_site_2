@@ -207,7 +207,7 @@ export default function ResearchPage() {
             <ScrollAnimation delay={350}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a 
-                  href="https://huggingface.co/Gilbert-AI" 
+                  href="https://huggingface.co/Lexia-Labs" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -444,7 +444,7 @@ export default function ResearchPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a 
-                  href="https://huggingface.co/Gilbert-AI" 
+                  href="https://huggingface.co/Lexia-Labs" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
