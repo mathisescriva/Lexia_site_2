@@ -20,6 +20,8 @@ export function HomePage() {
     { src: "/logos/logo_omnes.webp", alt: "Omnes" },
     { src: "/logos/logo.webp", alt: "Partner" },
     { src: "/logos/Safran_-_logo_2016.webp", alt: "Safran" },
+    { src: "/logos/logo_LPSB.png", alt: "La Poste Solutions Business" },
+    { src: "/logos/logo_marie_paris.png", alt: "Mairie de Paris" },
   ]
 
   return (
