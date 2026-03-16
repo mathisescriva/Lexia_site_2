@@ -9,9 +9,11 @@ import Link from "next/link"
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [openProduct, setOpenProduct] = useState(false)
+  const [openIndustries, setOpenIndustries] = useState(false)
   const [openCompany, setOpenCompany] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileProductOpen, setMobileProductOpen] = useState(false)
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false)
   const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false)
 
   useEffect(() => {
@@ -86,6 +88,32 @@ export function Header() {
                     className="block rounded-md px-3 py-2 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
                     API
+                  </Link>
+                </div>
+              </>
+            )}
+          </div>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenIndustries(true)}
+            onMouseLeave={() => setOpenIndustries(false)}
+          >
+            <button
+              className="flex items-center gap-1 text-sm font-normal text-foreground transition-opacity hover:opacity-60 px-3 py-2"
+            >
+              Industries
+              <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${openIndustries ? 'rotate-180' : ''}`} />
+            </button>
+            {openIndustries && (
+              <>
+                <div className="absolute left-0 top-full h-1.5 w-full" />
+                <div className="absolute left-0 top-full mt-1.5 w-[180px] rounded-md border bg-popover p-2 shadow-lg">
+                  <Link
+                    href="/industries/manufacturing"
+                    className="block rounded-md px-3 py-2 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground"
+                  >
+                    Industrie
                   </Link>
                 </div>
               </>
@@ -194,6 +222,28 @@ export function Header() {
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     API
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Industries Dropdown */}
+            <div>
+              <button
+                className="flex w-full items-center justify-between px-3 py-2 text-sm font-normal text-foreground transition-opacity hover:opacity-60"
+                onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+              >
+                Industries
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileIndustriesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileIndustriesOpen && (
+                <div className="pl-4 space-y-2 mt-2">
+                  <Link
+                    href="/industries/manufacturing"
+                    className="block px-3 py-2 text-sm text-muted-foreground transition-opacity hover:opacity-60"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Industrie
                   </Link>
                 </div>
               )}
