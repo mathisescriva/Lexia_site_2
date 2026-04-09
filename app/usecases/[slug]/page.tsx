@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { UseCasePageContent } from "./UseCasePageContent"
+import { JsonLd } from "@/components/JsonLd"
 
 type UseCaseCategory = "productivity" | "customer-service" | "analytics" | "quality"
 
@@ -299,12 +300,34 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${useCase.title} | Lexia Use Cases`,
-    description: useCase.description,
+    title: `${useCase.title} - Cas d'Usage Technologie Vocale`,
+    description: useCase.longDescription,
+    keywords: [
+      useCase.title,
+      "technologie vocale",
+      "speech-to-text entreprise",
+      "solution vocale",
+      ...useCase.features.slice(0, 3),
+    ],
     openGraph: {
-      title: useCase.title,
+      title: `${useCase.title} | Lexia`,
       description: useCase.description,
       type: "article",
+      url: `https://www.lexiapro.fr/usecases/${useCase.id}`,
+      images: [
+        {
+          url: useCase.image,
+          width: 1200,
+          height: 630,
+          alt: useCase.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${useCase.title} | Lexia`,
+      description: useCase.description,
+      images: [useCase.image],
     },
     alternates: {
       canonical: `https://www.lexiapro.fr/usecases/${useCase.id}`,
@@ -319,5 +342,52 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
-  return <UseCasePageContent useCase={useCase} />
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: useCase.title,
+    description: useCase.longDescription,
+    url: `https://www.lexiapro.fr/usecases/${useCase.id}`,
+    image: `https://www.lexiapro.fr${useCase.image}`,
+    provider: {
+      "@type": "Organization",
+      name: "Lexia",
+      url: "https://www.lexiapro.fr",
+    },
+    serviceType: "Speech Technology",
+    areaServed: "Worldwide",
+  }
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: "https://www.lexiapro.fr",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Cas d'Usage",
+        item: "https://www.lexiapro.fr/usecases",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: useCase.title,
+        item: `https://www.lexiapro.fr/usecases/${useCase.id}`,
+      },
+    ],
+  }
+
+  return (
+    <>
+      <JsonLd data={serviceJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      <UseCasePageContent useCase={useCase} />
+    </>
+  )
 }

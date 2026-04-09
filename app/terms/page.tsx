@@ -7,8 +7,22 @@ import { ScrollAnimation } from "@/components/ScrollAnimation"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Lexia",
-  description: "Lexia's Terms of Service - Conditions of use for our website and services.",
+  title: "Conditions Générales d'Utilisation",
+  description: "Conditions générales d'utilisation de Lexia. Termes et conditions d'utilisation de notre site web et de nos services de technologie vocale pour l'entreprise.",
+  keywords: ["conditions générales", "CGU", "termes de service", "Lexia", "utilisation"],
+  openGraph: {
+    title: "Conditions Générales d'Utilisation | Lexia",
+    description: "Conditions d'utilisation du site web et des services Lexia.",
+    type: "website",
+    url: "https://www.lexiapro.fr/terms",
+  },
+  alternates: {
+    canonical: "https://www.lexiapro.fr/terms",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function TermsPage() {

@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { ScrollAnimation } from "@/components/ScrollAnimation"
+import { JsonLd } from "@/components/JsonLd"
 import { Calendar, Clock, ArrowLeft, User, Share2 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -331,9 +332,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${post.title} | Lexia Blog`,
+    title: `${post.title} | Blog Lexia`,
     description: post.excerpt,
-    keywords: post.keywords?.join(", "),
+    keywords: post.keywords,
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -341,6 +342,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       publishedTime: post.date,
       authors: [post.author],
       tags: post.keywords,
+      url: `https://www.lexiapro.fr/blog/${post.slug}`,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
     },
     alternates: {
       canonical: `https://www.lexiapro.fr/blog/${post.slug}`,
@@ -355,12 +371,69 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://www.lexiapro.fr${post.image}`,
+    author: {
+      "@type": "Person",
+      name: post.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Lexia",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.lexiapro.fr/logos/logo_lexia.webp",
+      },
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.lexiapro.fr/blog/${post.slug}`,
+    },
+    keywords: post.keywords?.join(", "),
+    articleSection: post.category,
+    wordCount: post.content.join(" ").split(" ").length,
+  }
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: "https://www.lexiapro.fr",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://www.lexiapro.fr/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://www.lexiapro.fr/blog/${post.slug}`,
+      },
+    ],
+  }
+
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <Header />
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative h-[450px] md:h-[550px] overflow-hidden">
+    <>
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      <div className="flex min-h-screen flex-col bg-background">
+        <Header />
+        <main className="flex-1">
+          {/* Hero Section */}
+          <section className="relative h-[450px] md:h-[550px] overflow-hidden">
           <Image
             src={post.image}
             alt={post.title}
@@ -442,8 +515,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </ScrollAnimation>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }

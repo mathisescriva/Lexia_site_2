@@ -7,8 +7,22 @@ import { ScrollAnimation } from "@/components/ScrollAnimation"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Lexia",
-  description: "Lexia's Privacy Policy - How we collect, use, and protect your personal data.",
+  title: "Politique de Confidentialité",
+  description: "Politique de confidentialité de Lexia. Découvrez comment nous collectons, utilisons et protégeons vos données personnelles. RGPD compliant, hébergement européen des données.",
+  keywords: ["politique de confidentialité", "RGPD", "protection des données", "Lexia", "données personnelles"],
+  openGraph: {
+    title: "Politique de Confidentialité | Lexia",
+    description: "Politique de confidentialité de Lexia - Comment nous protégeons vos données personnelles.",
+    type: "website",
+    url: "https://www.lexiapro.fr/privacy",
+  },
+  alternates: {
+    canonical: "https://www.lexiapro.fr/privacy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function PrivacyPage() {

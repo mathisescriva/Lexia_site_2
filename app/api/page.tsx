@@ -11,12 +11,28 @@ import { Code2, Zap, Lock, Globe, Terminal, Key, Server, Activity, PlayCircle, C
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "API Documentation | Lexia",
-  description: "Lexia API documentation - Coming soon. Integrate speech technology into your applications with our powerful REST API.",
+  title: "Documentation API - Speech-to-Text REST API",
+  description: "Documentation de l'API Lexia. Intégrez la technologie vocale speech-to-text dans vos applications avec notre API REST puissante. Transcription en temps réel, WebSocket, streaming, <100ms de latence. Coming soon.",
+  keywords: [
+    "API speech-to-text",
+    "REST API vocale",
+    "documentation API Lexia",
+    "transcription API",
+    "WebSocket streaming",
+    "intégration vocale",
+    "developer API",
+    "speech recognition API",
+  ],
   openGraph: {
-    title: "API Documentation | Lexia",
-    description: "Lexia API documentation - Coming soon. Integrate speech technology into your applications.",
+    title: "Documentation API - Speech-to-Text REST API | Lexia",
+    description: "Intégrez la technologie vocale dans vos applications. REST API, WebSocket, streaming en temps réel.",
     type: "website",
+    url: "https://www.lexiapro.fr/api",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "API Lexia - Speech-to-Text pour Développeurs",
+    description: "REST API, WebSocket, streaming. Intégrez la reconnaissance vocale dans vos applications.",
   },
   alternates: {
     canonical: "https://www.lexiapro.fr/api",

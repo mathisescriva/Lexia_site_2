@@ -1,5 +1,23 @@
+# https://www.lexiapro.fr - Lexia Speech Technology
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /test/
 
+# Sitemaps
 Sitemap: https://www.lexiapro.fr/sitemap.xml
 
+# Crawl-delay
+User-agent: *
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
