@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     url: "https://www.lexiapro.fr/careers",
     images: [
       {
-        url: "/logos/equipe.jpg",
+        url: "/logos/lexia-equipe-team-paris.jpg",
         width: 1200,
         height: 630,
-        alt: "Rejoignez l'équipe Lexia à Paris",
+        alt: "Équipe Lexia - startup deeptech française de technologie vocale à Paris",
       },
     ],
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Carrières Lexia - Startup Deeptech Paris",
     description: "Rejoignez notre équipe de chercheurs et ingénieurs en technologie vocale.",
-    images: ["/logos/equipe.jpg"],
+    images: ["/logos/lexia-equipe-team-paris.jpg"],
   },
   alternates: {
     canonical: "https://www.lexiapro.fr/careers",

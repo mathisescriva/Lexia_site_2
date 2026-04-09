@@ -33,6 +33,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Lexia - Technologie Vocale pour l'Entreprise",
       },
+      {
+        url: "/logos/lexia-equipe-team-paris.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Équipe Lexia - startup deeptech française de technologie vocale à Paris",
+      },
     ],
   },
   twitter: {
@@ -51,6 +57,15 @@ const organizationJsonLd = {
   name: "Lexia",
   url: "https://www.lexiapro.fr",
   logo: "https://www.lexiapro.fr/logos/logo_lexia.webp",
+  image: {
+    "@type": "ImageObject",
+    url: "https://www.lexiapro.fr/logos/lexia-equipe-team-paris.jpg",
+    contentUrl: "https://www.lexiapro.fr/logos/lexia-equipe-team-paris.jpg",
+    name: "Équipe Lexia - startup deeptech française technologie vocale Paris",
+    description: "L'équipe fondatrice de Lexia, startup deeptech française spécialisée en technologie vocale et speech-to-text souverain pour l'entreprise, basée à Paris.",
+    width: 1200,
+    height: 800,
+  },
   description: "Entreprise deeptech française spécialisée dans la technologie vocale pour l'entreprise. Solutions speech-to-text souveraines, transcription automatique, CRM vocal.",
   foundingDate: "2024",
   founders: [

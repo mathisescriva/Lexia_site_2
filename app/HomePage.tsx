@@ -686,6 +686,55 @@ export function HomePage() {
 
         <Separator />
 
+        {/* Team Section */}
+        <section className="container py-24 md:py-32">
+          <ScrollAnimation>
+            <div className="mx-auto max-w-6xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border bg-muted/30 text-xs font-medium text-muted-foreground uppercase tracking-wider mb-6">
+                    <Target className="h-3 w-3" />
+                    Our Team
+                  </div>
+                  <h2 className="mb-6 text-3xl font-light tracking-tight md:text-4xl">
+                    Built by{" "}
+                    <span className="font-extralight">Experts</span>
+                  </h2>
+                  <p className="text-base leading-relaxed text-muted-foreground mb-8">
+                    Lexia is built by a team of researchers, engineers, and innovators based in Paris, 
+                    dedicated to developing sovereign speech technology for the enterprise.
+                  </p>
+                  <Link href="/team">
+                    <Button variant="outline" className="font-normal group/btn">
+                      Meet the Team
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    </Button>
+                  </Link>
+                </div>
+                <ScrollAnimation delay={100}>
+                  <figure className="m-0">
+                    <div className="rounded-xl overflow-hidden border-2 group transition-all duration-300 hover:shadow-lg">
+                      <Image
+                        src="/logos/lexia-equipe-team-paris.jpg"
+                        alt="Équipe Lexia - startup deeptech française de technologie vocale basée à Paris"
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                        title="Lexia - Équipe fondatrice startup technologie vocale Paris"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-xs text-muted-foreground text-center">
+                      L&apos;équipe Lexia — Paris, France
+                    </figcaption>
+                  </figure>
+                </ScrollAnimation>
+              </div>
+            </div>
+          </ScrollAnimation>
+        </section>
+
+        <Separator />
+
         {/* Partners Section */}
         <section id="partners" className="container py-16 md:py-24" itemScope={true} itemType="https://schema.org/Organization">
           <ScrollAnimation>

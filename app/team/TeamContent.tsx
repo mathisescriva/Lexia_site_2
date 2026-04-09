@@ -45,13 +45,20 @@ export function TeamContent() {
               </ScrollAnimation>
               
               <ScrollAnimation delay={100}>
-                <Card className="border-2 rounded-xl overflow-hidden group transition-all duration-300 hover:shadow-lg">
-                  <CardContent className="p-0">
-                    <div className="relative w-full aspect-[4/3]">
-                      <Image src="/logos/equipe.jpg" alt="Lexia Team" fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
-                    </div>
-                  </CardContent>
-                </Card>
+                <figure className="m-0" itemScope itemType="https://schema.org/ImageObject">
+                  <Card className="border-2 rounded-xl overflow-hidden group transition-all duration-300 hover:shadow-lg">
+                    <CardContent className="p-0">
+                      <div className="relative w-full aspect-[4/3]">
+                        <Image src="/logos/lexia-equipe-team-paris.jpg" alt="Équipe Lexia - startup deeptech française de technologie vocale basée à Paris, fondée par Mathis Escriva et Martial Roberge" fill className="object-cover transition-transform duration-300 group-hover:scale-105" title="Lexia - Équipe fondatrice de la startup de technologie vocale à Paris" itemProp="contentUrl" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                  <figcaption className="mt-3 text-xs text-muted-foreground text-center" itemProp="caption">
+                    L&apos;équipe Lexia — startup deeptech de technologie vocale, Paris
+                  </figcaption>
+                  <meta itemProp="name" content="Équipe Lexia - technologie vocale Paris" />
+                  <meta itemProp="description" content="Photo de l'équipe fondatrice de Lexia, startup deeptech française spécialisée en technologie vocale et speech-to-text pour l'entreprise, basée à Paris." />
+                </figure>
               </ScrollAnimation>
             </div>
           </div>
