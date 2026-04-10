@@ -92,6 +92,12 @@ const teamJsonLd = {
         jobTitle: "Head of Marketing & Communication",
         image: "https://www.lexiapro.fr/logos/jeanne.jpg",
       },
+      {
+        "@type": "Person",
+        name: "Louis Mouchon",
+        jobTitle: "Fullstack Developer & MLOps",
+        image: "https://www.lexiapro.fr/logos/mouchon.jpg",
+      },
     ],
   },
 }

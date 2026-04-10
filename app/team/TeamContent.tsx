@@ -77,12 +77,13 @@ export function TeamContent() {
               </div>
             </ScrollAnimation>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
               {[
                 { name: "Mathis Escriva", role: "Co-Founder", src: "/logos/mathis.jpg" },
                 { name: "Martial Roberge", role: "Co-Founder", src: "/logos/martial.jpg" },
                 { name: "Hugo Fouan", role: "CTO", src: "/logos/hugo.jpg" },
                 { name: "Jeanne Lesca", role: "Head of Marketing & Communication", src: "/logos/jeanne.jpg" },
+                { name: "Louis Mouchon", role: "Fullstack Developer & MLOps", src: "/logos/mouchon.jpg" },
               ].map((member, i) => (
                 <ScrollAnimation key={i} delay={i * 80}>
                   <div className="group text-center">
