@@ -192,6 +192,52 @@ export function HomePage() {
 
         <Separator />
 
+        {/* Press / Media Section */}
+        <section className="container py-16 md:py-20">
+          <ScrollAnimation>
+            <div className="mx-auto max-w-4xl">
+              <p className="mb-10 text-sm text-muted-foreground font-normal text-center uppercase tracking-wider">As seen in</p>
+              <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap">
+                <ScrollAnimation delay={50}>
+                  <div className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <Image
+                      src="/logos/logo_echos.png"
+                      alt="Les Echos"
+                      width={160}
+                      height={50}
+                      className="h-8 md:h-10 w-auto object-contain"
+                    />
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation delay={100}>
+                  <div className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <Image
+                      src="/logos/logo_ouest_france.png"
+                      alt="Ouest France"
+                      width={160}
+                      height={50}
+                      className="h-8 md:h-10 w-auto object-contain"
+                    />
+                  </div>
+                </ScrollAnimation>
+                <ScrollAnimation delay={150}>
+                  <div className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                    <Image
+                      src="/logos/logo_who.jpg"
+                      alt="Who's Who in France"
+                      width={160}
+                      height={50}
+                      className="h-10 md:h-12 w-auto object-contain"
+                    />
+                  </div>
+                </ScrollAnimation>
+              </div>
+            </div>
+          </ScrollAnimation>
+        </section>
+
+        <Separator />
+
         {/* Use Cases Section */}
         <section id="use-cases" className="container py-24 md:py-32" itemScope={true} itemType="https://schema.org/ItemList">
           <ScrollAnimation>
