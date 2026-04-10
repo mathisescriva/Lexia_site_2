@@ -3,26 +3,26 @@ import { ContactContent } from "./ContactContent"
 import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Contact - Réservez un Appel",
-  description: "Contactez Lexia pour découvrir nos solutions de technologie vocale pour l'entreprise. Réservez un appel avec notre équipe pour discuter de vos besoins en speech-to-text, CRM vocal, transcription automatique et déploiement on-premise.",
+  title: "Contact - Book a Call",
+  description: "Contact Lexia to discover our enterprise voice technology solutions. Book a call with our team to discuss your speech-to-text, voice CRM, automatic transcription, and on-premise deployment needs.",
   keywords: [
     "contact Lexia",
-    "réserver un appel",
-    "demo technologie vocale",
-    "consultation speech-to-text",
-    "devis solution vocale",
-    "partenariat entreprise",
+    "book a call",
+    "voice technology demo",
+    "speech-to-text consultation",
+    "voice solution quote",
+    "enterprise partnership",
   ],
   openGraph: {
-    title: "Contactez Lexia - Réservez un Appel",
-    description: "Discutez avec notre équipe de vos besoins en technologie vocale entreprise.",
+    title: "Contact Lexia - Book a Call",
+    description: "Discuss your enterprise voice technology needs with our team.",
     type: "website",
     url: "https://www.lexiapro.fr/contact",
   },
   twitter: {
     card: "summary",
-    title: "Contactez Lexia - Solutions Vocales Entreprise",
-    description: "Réservez un appel pour discuter de vos besoins en technologie vocale.",
+    title: "Contact Lexia - Enterprise Voice Solutions",
+    description: "Book a call to discuss your voice technology needs.",
   },
   alternates: {
     canonical: "https://www.lexiapro.fr/contact",

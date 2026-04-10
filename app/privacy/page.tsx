@@ -7,12 +7,12 @@ import { ScrollAnimation } from "@/components/ScrollAnimation"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Politique de Confidentialité",
-  description: "Politique de confidentialité de Lexia. Découvrez comment nous collectons, utilisons et protégeons vos données personnelles. RGPD compliant, hébergement européen des données.",
-  keywords: ["politique de confidentialité", "RGPD", "protection des données", "Lexia", "données personnelles"],
+  title: "Privacy Policy",
+  description: "Lexia's privacy policy. Learn how we collect, use, and protect your personal data. GDPR compliant, European data hosting.",
+  keywords: ["privacy policy", "GDPR", "data protection", "Lexia", "personal data"],
   openGraph: {
-    title: "Politique de Confidentialité | Lexia",
-    description: "Politique de confidentialité de Lexia - Comment nous protégeons vos données personnelles.",
+    title: "Privacy Policy | Lexia",
+    description: "Lexia's privacy policy - How we protect your personal data.",
     type: "website",
     url: "https://www.lexiapro.fr/privacy",
   },
@@ -56,114 +56,114 @@ export default function PrivacyPage() {
                     <div>
                       <h2 className="text-2xl font-light mb-4">1. Introduction</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        LEXIA FRANCE, société par actions simplifiée au capital social de 500 €, dont le siège social est situé au MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE, immatriculée au Registre du Commerce et des Sociétés de Laval sous le numéro 928 955 426, représentée par M. Mathis Escriva agissant et ayant les pouvoirs nécessaires en tant que président. SIRET : 92895542600020 (ci-après "Lexia", "nous", "notre") s'engage à protéger votre vie privée et vos données personnelles.
+                        LEXIA FRANCE, a simplified joint-stock company (société par actions simplifiée) with a share capital of €500, whose registered office is located at MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE, registered with the Laval Trade and Companies Register under number 928 955 426, represented by Mr. Mathis Escriva acting and having the necessary powers as president. SIRET: 92895542600020 (hereinafter "Lexia", "we", "our") is committed to protecting your privacy and personal data.
                       </p>
                       <p className="text-base leading-relaxed text-foreground">
-                        Cette politique de confidentialité décrit comment nous collectons, utilisons, stockons et protégeons vos informations personnelles lorsque vous utilisez notre site web <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link> ou nos services.
+                        This privacy policy describes how we collect, use, store, and protect your personal information when you use our website <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link> or our services.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">2. Responsable du Traitement</h2>
+                      <h2 className="text-2xl font-light mb-4">2. Data Controller</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Le responsable du traitement des données personnelles est LEXIA FRANCE, dont les coordonnées sont :
+                        The data controller for personal data is LEXIA FRANCE, whose contact details are:
                       </p>
                       <ul className="list-disc pl-6 mt-4 space-y-2 text-base leading-relaxed text-foreground">
-                        <li>Adresse : MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE</li>
-                        <li>Email : <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a></li>
-                        <li>Site web : <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link></li>
-                        <li>SIRET : 92895542600020</li>
+                        <li>Address: MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE</li>
+                        <li>Email: <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a></li>
+                        <li>Website: <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link></li>
+                        <li>SIRET: 92895542600020</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">3. Données Collectées</h2>
+                      <h2 className="text-2xl font-light mb-4">3. Data Collected</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        Nous collectons les données personnelles suivantes :
+                        We collect the following personal data:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed text-foreground">
-                        <li><strong>Données d'identification :</strong> nom, prénom, adresse email</li>
-                        <li><strong>Données de contact :</strong> numéro de téléphone, adresse postale</li>
-                        <li><strong>Données techniques :</strong> adresse IP, type de navigateur, pages visitées</li>
-                        <li><strong>Données de communication :</strong> messages, demandes de contact, contenus de formulaires</li>
+                        <li><strong>Identification data:</strong> last name, first name, email address</li>
+                        <li><strong>Contact data:</strong> phone number, postal address</li>
+                        <li><strong>Technical data:</strong> IP address, browser type, pages visited</li>
+                        <li><strong>Communication data:</strong> messages, contact requests, form contents</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">4. Finalités du Traitement</h2>
+                      <h2 className="text-2xl font-light mb-4">4. Purposes of Processing</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        Vos données personnelles sont traitées pour les finalités suivantes :
+                        Your personal data is processed for the following purposes:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed text-foreground">
-                        <li>Répondre à vos demandes de contact et de renseignements</li>
-                        <li>Fournir nos services de technologie vocale</li>
-                        <li>Améliorer notre site web et nos services</li>
-                        <li>Respecter nos obligations légales et réglementaires</li>
-                        <li>Gérer la relation client et le support technique</li>
+                        <li>Responding to your contact and information requests</li>
+                        <li>Providing our voice technology services</li>
+                        <li>Improving our website and services</li>
+                        <li>Complying with our legal and regulatory obligations</li>
+                        <li>Managing the customer relationship and technical support</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">5. Base Légale du Traitement</h2>
+                      <h2 className="text-2xl font-light mb-4">5. Legal Basis for Processing</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Le traitement de vos données personnelles est basé sur votre consentement, l'exécution d'un contrat, le respect d'une obligation légale ou notre intérêt légitime, conformément au Règlement Général sur la Protection des Données (RGPD).
+                        The processing of your personal data is based on your consent, the performance of a contract, compliance with a legal obligation, or our legitimate interest, in accordance with the General Data Protection Regulation (GDPR).
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">6. Conservation des Données</h2>
+                      <h2 className="text-2xl font-light mb-4">6. Data Retention</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Vos données personnelles sont conservées pendant la durée nécessaire aux finalités pour lesquelles elles ont été collectées, et conformément aux obligations légales applicables.
+                        Your personal data is retained for the duration necessary to fulfill the purposes for which it was collected, and in accordance with applicable legal obligations.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">7. Vos Droits</h2>
+                      <h2 className="text-2xl font-light mb-4">7. Your Rights</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        Conformément au RGPD, vous disposez des droits suivants :
+                        In accordance with the GDPR, you have the following rights:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed text-foreground">
-                        <li><strong>Droit d'accès :</strong> obtenir une copie de vos données personnelles</li>
-                        <li><strong>Droit de rectification :</strong> corriger vos données personnelles inexactes</li>
-                        <li><strong>Droit à l'effacement :</strong> demander la suppression de vos données</li>
-                        <li><strong>Droit à la limitation :</strong> demander la limitation du traitement</li>
-                        <li><strong>Droit à la portabilité :</strong> récupérer vos données dans un format structuré</li>
-                        <li><strong>Droit d'opposition :</strong> vous opposer au traitement de vos données</li>
+                        <li><strong>Right of access:</strong> obtain a copy of your personal data</li>
+                        <li><strong>Right to rectification:</strong> correct inaccurate personal data</li>
+                        <li><strong>Right to erasure:</strong> request the deletion of your data</li>
+                        <li><strong>Right to restriction:</strong> request the restriction of processing</li>
+                        <li><strong>Right to data portability:</strong> retrieve your data in a structured format</li>
+                        <li><strong>Right to object:</strong> object to the processing of your data</li>
                       </ul>
                       <p className="text-base leading-relaxed text-foreground mt-4">
-                        Pour exercer ces droits, vous pouvez nous contacter à l'adresse <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a>.
+                        To exercise these rights, you can contact us at <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a>.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">8. Sécurité des Données</h2>
+                      <h2 className="text-2xl font-light mb-4">8. Data Security</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, perte, destruction ou altération.
+                        We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, destruction, or alteration.
                       </p>
                     </div>
 
                     <div>
                       <h2 className="text-2xl font-light mb-4">9. Cookies</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Notre site web utilise des cookies pour améliorer votre expérience de navigation. Vous pouvez configurer votre navigateur pour refuser les cookies, mais cela peut affecter certaines fonctionnalités du site.
+                        Our website uses cookies to improve your browsing experience. You can configure your browser to reject cookies, but this may affect certain website features.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">10. Modification de la Politique</h2>
+                      <h2 className="text-2xl font-light mb-4">10. Policy Changes</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page avec une mise à jour de la date de dernière modification.
+                        We reserve the right to modify this privacy policy at any time. Any changes will be published on this page with an updated last modification date.
                       </p>
                     </div>
 
                     <div>
                       <h2 className="text-2xl font-light mb-4">11. Contact</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Pour toute question concernant cette politique de confidentialité, vous pouvez nous contacter à :
+                        For any questions regarding this privacy policy, you can contact us at:
                       </p>
                       <ul className="list-none pl-0 mt-4 space-y-2 text-base leading-relaxed text-foreground">
-                        <li>Email : <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a></li>
-                        <li>Adresse : MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE</li>
+                        <li>Email: <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a></li>
+                        <li>Address: MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE</li>
                       </ul>
                     </div>
                   </div>

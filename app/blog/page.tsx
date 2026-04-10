@@ -3,29 +3,29 @@ import { BlogPageContent } from "./BlogPageContent"
 import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Blog - Technologie Vocale & Solutions Entreprise",
-  description: "Articles et actualités sur la technologie vocale, le speech-to-text, la reconnaissance vocale entreprise, les modèles IA et la recherche. Découvrez nos insights sur le CRM vocal, la transcription automatique et l'intelligence de réunion.",
+  title: "Blog - Voice Technology & Enterprise Solutions",
+  description: "Articles and news about voice technology, speech-to-text, enterprise voice recognition, AI models, and research. Discover our insights on voice CRM, automatic transcription, and meeting intelligence.",
   keywords: [
-    "blog technologie vocale",
-    "articles speech-to-text",
-    "reconnaissance vocale entreprise",
-    "IA vocale actualités",
-    "recherche AI Lab ECE",
-    "modèles Hugging Face",
-    "transcription automatique",
-    "CRM vocal",
+    "voice technology blog",
+    "speech-to-text articles",
+    "enterprise voice recognition",
+    "voice AI news",
+    "AI Lab ECE research",
+    "Hugging Face models",
+    "automatic transcription",
+    "voice CRM",
     "Gilbert API",
   ],
   openGraph: {
-    title: "Blog - Technologie Vocale & Solutions Entreprise | Lexia",
-    description: "Articles et actualités sur la technologie vocale, le speech-to-text et les solutions IA pour l'entreprise.",
+    title: "Blog - Voice Technology & Enterprise Solutions | Lexia",
+    description: "Articles and news about voice technology, speech-to-text, and AI solutions for enterprises.",
     type: "website",
     url: "https://www.lexiapro.fr/blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog Lexia - Technologie Vocale & Solutions Entreprise",
-    description: "Articles et actualités sur la technologie vocale et le speech-to-text pour l'entreprise.",
+    title: "Lexia Blog - Voice Technology & Enterprise Solutions",
+    description: "Articles and news about voice technology and speech-to-text for enterprises.",
   },
   alternates: {
     canonical: "https://www.lexiapro.fr/blog",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
 const blogJsonLd = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  name: "Blog Lexia",
+  name: "Lexia Blog",
   url: "https://www.lexiapro.fr/blog",
-  description: "Articles et actualités sur la technologie vocale et les solutions speech-to-text pour l'entreprise.",
+  description: "Articles and news about voice technology and speech-to-text solutions for enterprises.",
   publisher: {
     "@type": "Organization",
     name: "Lexia",

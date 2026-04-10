@@ -3,22 +3,22 @@ import { UseCasesContent } from "./UseCasesContent"
 import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Cas d'Usage - Solutions Vocales Entreprise",
-  description: "Découvrez comment les entreprises utilisent la technologie vocale Lexia : CRM vocal, transcription automatique d'appels, intelligence de réunion, analytics vocaux, assistant vocal intelligent, assurance qualité. Solutions speech-to-text souveraines.",
+  title: "Use Cases - Enterprise Voice Solutions",
+  description: "Discover how enterprises use Lexia voice technology: voice CRM, automatic call transcription, meeting intelligence, voice analytics, intelligent voice assistant, quality assurance. Sovereign speech-to-text solutions.",
   keywords: [
-    "cas d'usage technologie vocale",
-    "CRM vocal entreprise",
-    "transcription automatique appels",
-    "intelligence de réunion",
-    "analytics vocaux",
-    "assistant vocal entreprise",
-    "assurance qualité vocale",
-    "speech-to-text entreprise",
-    "solutions vocales souveraines",
+    "voice technology use cases",
+    "enterprise voice CRM",
+    "automatic call transcription",
+    "meeting intelligence",
+    "voice analytics",
+    "enterprise voice assistant",
+    "voice quality assurance",
+    "enterprise speech-to-text",
+    "sovereign voice solutions",
   ],
   openGraph: {
-    title: "Cas d'Usage - Solutions Vocales Entreprise | Lexia",
-    description: "CRM vocal, transcription automatique, intelligence de réunion et plus. Découvrez les solutions speech-to-text de Lexia pour l'entreprise.",
+    title: "Use Cases - Enterprise Voice Solutions | Lexia",
+    description: "Voice CRM, automatic transcription, meeting intelligence, and more. Discover Lexia's speech-to-text solutions for enterprises.",
     type: "website",
     url: "https://www.lexiapro.fr/usecases",
     images: [
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
         url: "/logos/logo_lexia.webp",
         width: 1200,
         height: 630,
-        alt: "Lexia Use Cases - Solutions Vocales Entreprise",
+        alt: "Lexia Use Cases - Enterprise Voice Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cas d'Usage - Solutions Vocales Entreprise | Lexia",
-    description: "CRM vocal, transcription automatique, intelligence de réunion. Solutions speech-to-text souveraines.",
+    title: "Use Cases - Enterprise Voice Solutions | Lexia",
+    description: "Voice CRM, automatic transcription, meeting intelligence. Sovereign speech-to-text solutions.",
   },
   alternates: {
     canonical: "https://www.lexiapro.fr/usecases",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
 const useCasesJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Cas d'usage Lexia",
-  description: "Solutions vocales pour l'entreprise",
+  name: "Lexia Use Cases",
+  description: "Voice solutions for enterprises",
   url: "https://www.lexiapro.fr/usecases",
   numberOfItems: 6,
   itemListElement: [

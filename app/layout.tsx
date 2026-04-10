@@ -22,26 +22,26 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lexiapro.fr"),
   title: {
-    default: "Lexia - Technologie Vocale pour l'Entreprise | Speech-to-Text Souverain",
+    default: "Lexia - Enterprise Voice Technology | Sovereign Speech-to-Text",
     template: "%s | Lexia",
   },
-  description: "Lexia est une entreprise deeptech française spécialisée dans la technologie vocale pour l'entreprise. Solutions speech-to-text souveraines, transcription automatique, CRM vocal et intelligence de réunion. Déploiement on-premise, RGPD compliant.",
+  description: "Lexia is a French deeptech company specializing in enterprise voice technology. Sovereign speech-to-text solutions, automatic transcription, voice CRM, and meeting intelligence. On-premise deployment, GDPR compliant.",
   keywords: [
-    "technologie vocale",
+    "voice technology",
     "speech-to-text",
-    "reconnaissance vocale",
-    "transcription automatique",
-    "IA vocale entreprise",
-    "CRM vocal",
-    "intelligence de réunion",
+    "voice recognition",
+    "automatic transcription",
+    "enterprise voice AI",
+    "voice CRM",
+    "meeting intelligence",
     "speech technology",
     "enterprise voice solutions",
-    "souveraineté numérique",
-    "RGPD",
+    "digital sovereignty",
+    "GDPR",
     "on-premise",
-    "API vocale",
+    "voice API",
     "Lexia",
-    "deeptech française",
+    "French deeptech",
     "Gilbert API",
     "Hugging Face",
     "AI Lab ECE",
@@ -64,24 +64,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "fr_FR",
+    locale: "en_US",
     url: "https://www.lexiapro.fr",
     siteName: "Lexia",
-    title: "Lexia - Technologie Vocale pour l'Entreprise",
-    description: "Solutions speech-to-text souveraines pour l'entreprise. Transcription automatique, CRM vocal, intelligence de réunion. Déploiement on-premise, RGPD compliant.",
+    title: "Lexia - Enterprise Voice Technology",
+    description: "Sovereign speech-to-text solutions for enterprises. Automatic transcription, voice CRM, meeting intelligence. On-premise deployment, GDPR compliant.",
     images: [
       {
         url: "/logos/logo_lexia.webp",
         width: 1200,
         height: 630,
-        alt: "Lexia - Technologie Vocale pour l'Entreprise",
+        alt: "Lexia - Enterprise Voice Technology",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lexia - Technologie Vocale pour l'Entreprise",
-    description: "Solutions speech-to-text souveraines pour l'entreprise. Transcription automatique, CRM vocal, intelligence de réunion.",
+    title: "Lexia - Enterprise Voice Technology",
+    description: "Sovereign speech-to-text solutions for enterprises. Automatic transcription, voice CRM, meeting intelligence.",
     images: ["/logos/logo_lexia.webp"],
   },
   robots: {
@@ -107,7 +107,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased">
         <Providers>{children}</Providers>
       </body>

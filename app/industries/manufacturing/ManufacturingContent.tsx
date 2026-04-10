@@ -277,22 +277,22 @@ export function ManufacturingContent() {
               <div className="mx-auto max-w-3xl text-center">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-8">
                   <Factory className="h-3 w-3" />
-                  Industrie
+                  Manufacturing
                 </div>
                 <h1 className="mb-6 text-4xl font-light tracking-[-0.025em] md:text-5xl lg:text-[3.5rem] leading-[1.08]">
-                  L&#39;IA vocale conçue{" "}
+                  Voice AI built{" "}
                   <br className="hidden md:block" />
-                  <span className="font-extralight text-muted-foreground">pour l&#39;industrie française</span>
+                  <span className="font-extralight text-muted-foreground">for manufacturing</span>
                 </h1>
                 <p className="text-base leading-relaxed text-muted-foreground max-w-xl mx-auto mb-10">
-                  Transformez chaque interaction vocale en donnee structuree. 
-                  References pieces, codes articles, terminologies metier — Lexia comprend 
-                  le langage de vos equipes et alimente directement vos systemes.
+                  Transform every voice interaction into structured data.
+                  Part references, article codes, industry terminology — Lexia understands
+                  your teams&#39; language and feeds directly into your systems.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link href="/contact">
                     <Button size="lg" className="font-normal h-11 px-6">
-                      Demander une demo
+                      Request a Demo
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
@@ -302,7 +302,7 @@ export function ManufacturingContent() {
                     className="font-normal h-11 px-6 text-muted-foreground"
                     onClick={() => document.getElementById('use-cases')?.scrollIntoView({ behavior: 'smooth' })}
                   >
-                    Voir les cas d&#39;usage
+                    View Use Cases
                     <ArrowDownRight className="ml-1.5 h-3.5 w-3.5" />
                   </Button>
                 </div>
@@ -316,10 +316,10 @@ export function ManufacturingContent() {
           <div className="container py-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {[
-                { value: "+99%", label: "Precision jargon metier", icon: Zap },
-                { value: "<200ms", label: "Latence temps reel", icon: Timer },
-                { value: "On-Prem", label: "Deploiement souverain", icon: Shield },
-                { value: "SAP, SF", label: "Integrations natives", icon: Database },
+                { value: "+99%", label: "Industry jargon accuracy", icon: Zap },
+                { value: "<200ms", label: "Real-time latency", icon: Timer },
+                { value: "On-Prem", label: "Sovereign deployment", icon: Shield },
+                { value: "SAP, SF", label: "Native integrations", icon: Database },
               ].map((m, i) => (
                 <div key={i} className="flex items-center gap-3 justify-center">
                   <m.icon className="h-4 w-4 text-muted-foreground/50 flex-shrink-0" />
@@ -337,15 +337,15 @@ export function ManufacturingContent() {
         <section className="container py-24 md:py-32">
           <ScrollAnimation>
             <div className="mx-auto max-w-4xl">
-              <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-4">Constats terrain</p>
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest mb-4">Field observations</p>
               <h2 className="mb-12 text-2xl font-light tracking-tight md:text-3xl max-w-lg">
-                Les frictions que vous rencontrez au quotidien
+                The friction you face every day
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden">
                 {[
-                  { icon: TrendingDown, title: "Saisie manuelle lente", desc: "Vos operateurs quittent leur poste pour saisir sur un terminal. Erreurs de references, tickets incomplets, temps perdu." },
-                  { icon: Users, title: "SAV submerge", desc: "Centaines d'appels quotidiens, double saisie CRM, informations critiques perdues entre le telephone et le logiciel." },
-                  { icon: Package, title: "Tracabilite lacunaire", desc: "Rapports qualite remplis a posteriori, non-conformites signalees en fin de poste. Vous perdez en reactivite." },
+                  { icon: TrendingDown, title: "Slow manual entry", desc: "Your operators leave their workstation to enter data on a terminal. Reference errors, incomplete tickets, wasted time." },
+                  { icon: Users, title: "Overwhelmed after-sales", desc: "Hundreds of daily calls, duplicate CRM entry, critical information lost between the phone and the software." },
+                  { icon: Package, title: "Incomplete traceability", desc: "Quality reports filled in after the fact, non-conformances reported at end of shift. You lose responsiveness." },
                 ].map((p, i) => (
                   <ScrollAnimation key={i} delay={i * 80}>
                     <div className="bg-background p-8 h-full">
@@ -365,9 +365,9 @@ export function ManufacturingContent() {
           <div className="container py-24 md:py-32">
             <ScrollAnimation>
               <div className="mx-auto max-w-5xl">
-                <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-4 text-center">Comparaison</p>
+                <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-4 text-center">Comparison</p>
                 <h2 className="mb-14 text-2xl font-light tracking-tight md:text-3xl text-center max-w-md mx-auto">
-                  Avant et apres Lexia
+                  Before and after Lexia
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                   {/* AVANT */}
@@ -376,15 +376,15 @@ export function ManufacturingContent() {
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500/40 to-orange-500/40" />
                       <div className="flex items-center gap-2 mb-8">
                         <X className="h-4 w-4 text-red-500/60" />
-                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Sans Lexia</span>
+                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Without Lexia</span>
                       </div>
                       <div className="space-y-6">
                         {[
-                          { icon: Keyboard, text: "Saisie manuelle sur terminal apres chaque intervention" },
-                          { icon: Clock, text: "5 a 10 min par ticket — file d'attente au poste de saisie" },
-                          { icon: AlertTriangle, text: "15% d'erreurs sur les references pieces et codes articles" },
-                          { icon: Users, text: "Double saisie SAV : telephoner, noter, puis retaper dans le CRM" },
-                          { icon: FileText, text: "Rapports qualite remplis de memoire en fin de poste" },
+                          { icon: Keyboard, text: "Manual entry on terminal after each intervention" },
+                          { icon: Clock, text: "5 to 10 min per ticket — queue at the data entry station" },
+                          { icon: AlertTriangle, text: "15% errors on part references and article codes" },
+                          { icon: Users, text: "Duplicate after-sales entry: call, take notes, then re-type into CRM" },
+                          { icon: FileText, text: "Quality reports filled from memory at end of shift" },
                         ].map((item, i) => (
                           <div key={i} className="flex items-start gap-3">
                             <div className="w-8 h-8 rounded-lg border border-dashed border-muted-foreground/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -403,15 +403,15 @@ export function ManufacturingContent() {
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500" />
                       <div className="flex items-center gap-2 mb-8">
                         <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                        <span className="text-xs font-medium text-foreground uppercase tracking-widest">Avec Lexia</span>
+                        <span className="text-xs font-medium text-foreground uppercase tracking-widest">With Lexia</span>
                       </div>
                       <div className="space-y-6">
                         {[
-                          { icon: Mic, text: "Dictee vocale directement depuis le poste de travail, mains libres" },
-                          { icon: Zap, text: "Ticket cree en moins de 30 secondes, zero deplacement" },
-                          { icon: CheckCircle2, text: "+99% de precision sur les references metier et codes articles" },
-                          { icon: Database, text: "Appel SAV transcrit et injecte dans le CRM automatiquement" },
-                          { icon: Eye, text: "Rapport qualite dicte en temps reel pendant l'inspection" },
+                          { icon: Mic, text: "Voice dictation directly from the workstation, hands-free" },
+                          { icon: Zap, text: "Ticket created in under 30 seconds, zero movement" },
+                          { icon: CheckCircle2, text: "+99% accuracy on industry references and article codes" },
+                          { icon: Database, text: "After-sales call transcribed and injected into CRM automatically" },
+                          { icon: Eye, text: "Quality report dictated in real time during inspection" },
                         ].map((item, i) => (
                           <div key={i} className="flex items-start gap-3">
                             <div className="w-8 h-8 rounded-lg bg-foreground flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -441,13 +441,13 @@ export function ManufacturingContent() {
                     <ClipboardList className="h-5 w-5 text-background" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-1">Cas d&#39;usage 01 — Production &amp; Supply Chain</p>
-                    <h2 className="text-2xl font-light tracking-tight md:text-3xl">Creation de tickets par la voix</h2>
+                    <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-1">Use Case 01 — Production &amp; Supply Chain</p>
+                    <h2 className="text-2xl font-light tracking-tight md:text-3xl">Voice-powered ticket creation</h2>
                   </div>
                 </div>
                 <p className="text-[15px] text-muted-foreground leading-relaxed max-w-2xl ml-14 mb-14">
-                  Sur la ligne de production, vos operateurs dictent leurs tickets de maintenance 
-                  ou de non-conformite. Lexia reconnait les references pieces et alimente directement votre GMAO.
+                  On the production line, your operators dictate their maintenance
+                  or non-conformance tickets. Lexia recognizes part references and feeds directly into your CMMS.
                 </p>
               </ScrollAnimation>
 
@@ -455,10 +455,10 @@ export function ManufacturingContent() {
                 <ScrollAnimation delay={50}>
                   <ProcessStepper 
                     steps={[
-                      { icon: Mic, label: "Captation" },
+                      { icon: Mic, label: "Capture" },
                       { icon: Cpu, label: "Transcription" },
                       { icon: Search, label: "Extraction" },
-                      { icon: Send, label: "GMAO" },
+                      { icon: Send, label: "CMMS" },
                     ]}
                     currentStep={d1s}
                   />
@@ -469,7 +469,7 @@ export function ManufacturingContent() {
                       {/* Audio window */}
                       <div className="rounded-xl border overflow-hidden shadow-sm">
                         <WindowChrome 
-                          title="lexia-voice  —  Atelier B3" 
+                          title="lexia-voice  —  Workshop B3" 
                           status={d1 && d1s < 2 ? "REC" : undefined}
                           statusColor="red"
                           right={
@@ -493,28 +493,28 @@ export function ManufacturingContent() {
                             <>
                               <TypedTranscription
                                 active={d1s >= 1}
-                                text={`Ticket maintenance sur presse hydraulique PH-340, reference piece KLM-2847-B, defaut de pression circuit secondaire, priorite haute.`}
+                                text={`Maintenance ticket for hydraulic press PH-340, part reference KLM-2847-B, pressure fault on secondary circuit, high priority.`}
                                 highlights={d1s >= 2 ? [
-                                  { word: "PH-340", color: "bg-blue-500/15 text-blue-600 dark:text-blue-400", label: "Equipement", confidence: 99 },
-                                  { word: "KLM-2847-B", color: "bg-violet-500/15 text-violet-600 dark:text-violet-400", label: "Ref. piece", confidence: 98 },
-                                  { word: "pression circuit secondaire", color: "bg-orange-500/15 text-orange-600 dark:text-orange-400", label: "Type panne", confidence: 97 },
-                                  { word: "priorite haute", color: "bg-red-500/15 text-red-600 dark:text-red-400", label: "Priorite", confidence: 99 },
+                                  { word: "PH-340", color: "bg-blue-500/15 text-blue-600 dark:text-blue-400", label: "Equipment", confidence: 99 },
+                                  { word: "KLM-2847-B", color: "bg-violet-500/15 text-violet-600 dark:text-violet-400", label: "Part ref.", confidence: 98 },
+                                  { word: "pressure fault on secondary circuit", color: "bg-orange-500/15 text-orange-600 dark:text-orange-400", label: "Fault type", confidence: 97 },
+                                  { word: "high priority", color: "bg-red-500/15 text-red-600 dark:text-red-400", label: "Priority", confidence: 99 },
                                 ] : []}
                                 speed={28}
                               />
                               {d1s >= 2 && (
                                 <div className="mt-5 pt-4 border-t border-dashed flex flex-wrap gap-1.5 anim-slide-up">
-                                  <EntityTag label="EQUIPEMENT" value="PH-340" color="bg-blue-500/5 border-blue-500/20 text-blue-600 dark:text-blue-400" confidence={99} />
-                                  <EntityTag label="PIECE" value="KLM-2847-B" color="bg-violet-500/5 border-violet-500/20 text-violet-600 dark:text-violet-400" confidence={98} />
-                                  <EntityTag label="PANNE" value="Hydraulique" color="bg-orange-500/5 border-orange-500/20 text-orange-600 dark:text-orange-400" confidence={97} />
-                                  <EntityTag label="PRIORITE" value="P1" color="bg-red-500/5 border-red-500/20 text-red-600 dark:text-red-400" confidence={99} />
+                                  <EntityTag label="EQUIPMENT" value="PH-340" color="bg-blue-500/5 border-blue-500/20 text-blue-600 dark:text-blue-400" confidence={99} />
+                                  <EntityTag label="PART" value="KLM-2847-B" color="bg-violet-500/5 border-violet-500/20 text-violet-600 dark:text-violet-400" confidence={98} />
+                                  <EntityTag label="FAULT" value="Hydraulic" color="bg-orange-500/5 border-orange-500/20 text-orange-600 dark:text-orange-400" confidence={97} />
+                                  <EntityTag label="PRIORITY" value="P1" color="bg-red-500/5 border-red-500/20 text-red-600 dark:text-red-400" confidence={99} />
                                 </div>
                               )}
                             </>
                           ) : (
                             <div className="flex items-center gap-2 text-[13px] text-muted-foreground/30">
                               <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/20" />
-                              En attente du flux audio...
+                              Waiting for audio stream...
                             </div>
                           )}
                         </div>
@@ -536,17 +536,17 @@ export function ManufacturingContent() {
                         <div className="flex items-center justify-between px-4 py-2.5 border-b bg-emerald-500/[0.04]">
                           <div className="flex items-center gap-2">
                             <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
-                            <span className="text-[11px] font-medium">GMAO — Ticket #MT-2847</span>
+                            <span className="text-[11px] font-medium">CMMS — Ticket #MT-2847</span>
                           </div>
                           <span className="text-[9px] font-mono text-muted-foreground/50">08/02/2026 14:32:07</span>
                         </div>
                         <div className="p-5 bg-background space-y-3">
                           <div className="grid grid-cols-2 gap-2.5">
                             {[
-                              { label: "Equipement", value: "Presse hydraulique PH-340" },
-                              { label: "Reference piece", value: "KLM-2847-B", mono: true },
-                              { label: "Categorie", value: "Hydraulique — Circuit sec." },
-                              { label: "Priorite", value: "P1 — Haute", dot: "bg-red-500" },
+                              { label: "Equipment", value: "Hydraulic press PH-340" },
+                              { label: "Part reference", value: "KLM-2847-B", mono: true },
+                              { label: "Category", value: "Hydraulic — Sec. circuit" },
+                              { label: "Priority", value: "P1 — High", dot: "bg-red-500" },
                             ].map((f, i) => (
                               <div key={i} className="rounded-lg border p-2.5 bg-muted/20">
                                 <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">{f.label}</p>
@@ -558,12 +558,12 @@ export function ManufacturingContent() {
                             ))}
                           </div>
                           <div className="rounded-lg border p-2.5 bg-muted/20">
-                            <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Description auto-generee</p>
-                            <p className="text-[13px] text-muted-foreground leading-relaxed">Defaut de pression detecte sur le circuit secondaire de la presse hydraulique PH-340. Intervention requise.</p>
+                            <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Auto-generated description</p>
+                            <p className="text-[13px] text-muted-foreground leading-relaxed">Pressure fault detected on secondary circuit of hydraulic press PH-340. Intervention required.</p>
                           </div>
                           <div className="pt-2 flex items-center gap-4">
                             <div className="flex items-center gap-1.5 text-[10px] text-emerald-600/70 dark:text-emerald-400/70">
-                              <CheckCircle2 className="h-3 w-3" /> Equipe maintenance notifiee
+                              <CheckCircle2 className="h-3 w-3" /> Maintenance team notified
                             </div>
                             <div className="flex items-center gap-1.5 text-[10px] text-emerald-600/70 dark:text-emerald-400/70">
                               <CheckCircle2 className="h-3 w-3" /> Sync SAP PM
@@ -578,9 +578,9 @@ export function ManufacturingContent() {
                 {/* Metrics */}
                 <div className="mt-14 grid grid-cols-3 gap-px bg-border rounded-xl overflow-hidden">
                   {[
-                    { value: "÷3", label: "Temps de saisie", sub: "vs. saisie manuelle sur terminal" },
-                    { value: "0", label: "Erreur de reference", sub: "Reconnaissance du jargon metier" },
-                    { value: "100%", label: "Mains libres", sub: "Compatible EPI, gants, casque" },
+                    { value: "÷3", label: "Entry time", sub: "vs. manual entry on terminal" },
+                    { value: "0", label: "Reference errors", sub: "Industry jargon recognition" },
+                    { value: "100%", label: "Hands-free", sub: "Compatible with PPE, gloves, helmet" },
                   ].map((m, i) => (
                     <ScrollAnimation key={i} delay={80 * i}>
                       <div className="bg-background p-6 text-center">
@@ -608,13 +608,13 @@ export function ManufacturingContent() {
                     <Headphones className="h-5 w-5 text-background" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-1">Cas d&#39;usage 02 — Service Apres-Vente</p>
-                    <h2 className="text-2xl font-light tracking-tight md:text-3xl">Traitement automatise des appels SAV</h2>
+                    <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-1">Use Case 02 — After-Sales Service</p>
+                    <h2 className="text-2xl font-light tracking-tight md:text-3xl">Automated after-sales call processing</h2>
                   </div>
                 </div>
                 <p className="text-[15px] text-muted-foreground leading-relaxed max-w-2xl ml-14 mb-14">
-                  Chaque appel est transcrit en temps reel, categorise automatiquement, 
-                  et injecte dans votre CRM. Plus de double saisie, plus de tickets incomplets.
+                  Every call is transcribed in real time, automatically categorized,
+                  and injected into your CRM. No more duplicate entry, no more incomplete tickets.
                 </p>
               </ScrollAnimation>
 
@@ -622,9 +622,9 @@ export function ManufacturingContent() {
                 <ScrollAnimation delay={50}>
                   <ProcessStepper 
                     steps={[
-                      { icon: Phone, label: "Appel entrant" },
+                      { icon: Phone, label: "Incoming call" },
                       { icon: Cpu, label: "Transcription" },
-                      { icon: Search, label: "Categorisation" },
+                      { icon: Search, label: "Categorization" },
                       { icon: Database, label: "CRM / ERP" },
                     ]}
                     currentStep={d2s}
@@ -641,7 +641,7 @@ export function ManufacturingContent() {
                             </div>
                             <div>
                               <p className="text-[11px] font-medium">+33 4 72 XX XX XX</p>
-                              <p className="text-[9px] text-muted-foreground">Ligne SAV — Equipements industriels</p>
+                              <p className="text-[9px] text-muted-foreground">After-sales line — Industrial equipment</p>
                             </div>
                           </div>
                           {d2 && (
@@ -668,29 +668,29 @@ export function ManufacturingContent() {
                             <>
                               <TypedTranscription
                                 active={d2s >= 1}
-                                text={`Bonjour, j'ai un probleme avec mon groupe electrogene modele GE-5500. Il demarre mais s'arrete apres 30 secondes. Je l'ai achete en mars 2024, numero de serie SN-44821. Il devrait encore etre sous garantie.`}
+                                text={`Hello, I have a problem with my generator model GE-5500. It starts but stops after 30 seconds. I bought it in March 2024, serial number SN-44821. It should still be under warranty.`}
                                 highlights={d2s >= 2 ? [
-                                  { word: "GE-5500", color: "bg-blue-500/15 text-blue-600 dark:text-blue-400", label: "Produit", confidence: 99 },
-                                  { word: "SN-44821", color: "bg-violet-500/15 text-violet-600 dark:text-violet-400", label: "N° serie", confidence: 99 },
-                                  { word: "demarre mais s'arrete apres 30 secondes", color: "bg-orange-500/15 text-orange-600 dark:text-orange-400", label: "Symptome", confidence: 96 },
-                                  { word: "mars 2024", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Date achat", confidence: 98 },
-                                  { word: "sous garantie", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Statut", confidence: 94 },
+                                  { word: "GE-5500", color: "bg-blue-500/15 text-blue-600 dark:text-blue-400", label: "Product", confidence: 99 },
+                                  { word: "SN-44821", color: "bg-violet-500/15 text-violet-600 dark:text-violet-400", label: "Serial #", confidence: 99 },
+                                  { word: "starts but stops after 30 seconds", color: "bg-orange-500/15 text-orange-600 dark:text-orange-400", label: "Symptom", confidence: 96 },
+                                  { word: "March 2024", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Purchase date", confidence: 98 },
+                                  { word: "under warranty", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Status", confidence: 94 },
                                 ] : []}
                                 speed={22}
                               />
                               {d2s >= 2 && (
                                 <div className="mt-5 pt-4 border-t border-dashed flex flex-wrap gap-1.5 anim-slide-up">
-                                  <EntityTag label="PRODUIT" value="GE-5500" color="bg-blue-500/5 border-blue-500/20 text-blue-600 dark:text-blue-400" confidence={99} />
-                                  <EntityTag label="SERIE" value="SN-44821" color="bg-violet-500/5 border-violet-500/20 text-violet-600 dark:text-violet-400" confidence={99} />
-                                  <EntityTag label="CATEGORIE" value="Panne" color="bg-red-500/5 border-red-500/20 text-red-600 dark:text-red-400" confidence={97} />
-                                  <EntityTag label="GARANTIE" value="Active" color="bg-emerald-500/5 border-emerald-500/20 text-emerald-600 dark:text-emerald-400" confidence={94} />
+                                  <EntityTag label="PRODUCT" value="GE-5500" color="bg-blue-500/5 border-blue-500/20 text-blue-600 dark:text-blue-400" confidence={99} />
+                                  <EntityTag label="SERIAL" value="SN-44821" color="bg-violet-500/5 border-violet-500/20 text-violet-600 dark:text-violet-400" confidence={99} />
+                                  <EntityTag label="CATEGORY" value="Fault" color="bg-red-500/5 border-red-500/20 text-red-600 dark:text-red-400" confidence={97} />
+                                  <EntityTag label="WARRANTY" value="Active" color="bg-emerald-500/5 border-emerald-500/20 text-emerald-600 dark:text-emerald-400" confidence={94} />
                                 </div>
                               )}
                             </>
                           ) : (
                             <div className="flex items-center gap-2 text-[13px] text-muted-foreground/30">
                               <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/20" />
-                              En attente d&#39;appel...
+                              Waiting for call...
                             </div>
                           )}
                         </div>
@@ -717,34 +717,34 @@ export function ManufacturingContent() {
                         </div>
                         <div className="p-5 bg-background space-y-3">
                           <div className="rounded-lg border p-2.5 bg-muted/20">
-                            <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Client</p>
-                            <p className="text-[13px] font-medium">+33 4 72 XX XX XX — <span className="text-muted-foreground font-normal">identifie via SN-44821</span></p>
+                            <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Customer</p>
+                            <p className="text-[13px] font-medium">+33 4 72 XX XX XX — <span className="text-muted-foreground font-normal">identified via SN-44821</span></p>
                           </div>
                           <div className="grid grid-cols-2 gap-2.5">
                             <div className="rounded-lg border p-2.5 bg-muted/20">
-                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Produit</p>
+                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Product</p>
                               <p className="text-[13px] font-medium">GE-5500</p>
                             </div>
                             <div className="rounded-lg border p-2.5 bg-muted/20">
-                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">N° Serie</p>
+                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Serial #</p>
                               <p className="text-[13px] font-medium font-mono">SN-44821</p>
                             </div>
                             <div className="rounded-lg border p-2.5 bg-muted/20">
-                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Categorie</p>
-                              <p className="text-[13px] font-medium flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-red-500" />Panne — Alimentation</p>
+                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Category</p>
+                              <p className="text-[13px] font-medium flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-red-500" />Fault — Power supply</p>
                             </div>
                             <div className="rounded-lg border p-2.5 bg-muted/20">
-                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Garantie</p>
+                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Warranty</p>
                               <p className="text-[13px] font-medium text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />Active (03/2024)</p>
                             </div>
                           </div>
                           <div className="rounded-lg border p-2.5 bg-muted/20">
-                            <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Symptome</p>
-                            <p className="text-[13px] text-muted-foreground leading-relaxed">Demarrage puis arret apres 30s. Probleme probable d&#39;alimentation carburant.</p>
+                            <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Symptom</p>
+                            <p className="text-[13px] text-muted-foreground leading-relaxed">Starts then stops after 30s. Probable fuel supply issue.</p>
                           </div>
                           <div className="rounded-lg border p-2.5 bg-amber-500/[0.04] border-amber-500/15">
-                            <p className="text-[9px] text-amber-600 uppercase tracking-wider mb-0.5 font-medium">Action automatique</p>
-                            <p className="text-[13px] text-muted-foreground">Escalade technicien N2 — creneaux proposes sous 48h</p>
+                            <p className="text-[9px] text-amber-600 uppercase tracking-wider mb-0.5 font-medium">Automatic action</p>
+                            <p className="text-[13px] text-muted-foreground">Escalated to N2 technician — time slots offered within 48h</p>
                           </div>
                         </div>
                       </div>
@@ -754,9 +754,9 @@ export function ManufacturingContent() {
 
                 <div className="mt-14 grid grid-cols-3 gap-px bg-border rounded-xl overflow-hidden">
                   {[
-                    { value: "-60%", label: "Temps de traitement", sub: "Par ticket SAV" },
-                    { value: "100%", label: "Appels documentes", sub: "Zero perte d'information" },
-                    { value: "÷2", label: "Cout par ticket", sub: "Automatisation CRM/ERP" },
+                    { value: "-60%", label: "Processing time", sub: "Per after-sales ticket" },
+                    { value: "100%", label: "Documented calls", sub: "Zero information loss" },
+                    { value: "÷2", label: "Cost per ticket", sub: "CRM/ERP automation" },
                   ].map((m, i) => (
                     <ScrollAnimation key={i} delay={80 * i}>
                       <div className="bg-background p-6 text-center">
@@ -784,13 +784,13 @@ export function ManufacturingContent() {
                     <Eye className="h-5 w-5 text-background" />
                   </div>
                   <div>
-                    <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-1">Cas d&#39;usage 03 — Controle Qualite</p>
-                    <h2 className="text-2xl font-light tracking-tight md:text-3xl">Rapports d&#39;inspection vocaux</h2>
+                    <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-1">Use Case 03 — Quality Control</p>
+                    <h2 className="text-2xl font-light tracking-tight md:text-3xl">Voice inspection reports</h2>
                   </div>
                 </div>
                 <p className="text-[15px] text-muted-foreground leading-relaxed max-w-2xl ml-14 mb-14">
-                  Vos inspecteurs dictent leurs observations pendant la ronde. Lexia structure 
-                  automatiquement le rapport, verifie les tolerances et declenche les alertes.
+                  Your inspectors dictate their observations during rounds. Lexia automatically
+                  structures the report, checks tolerances, and triggers alerts.
                 </p>
               </ScrollAnimation>
 
@@ -798,10 +798,10 @@ export function ManufacturingContent() {
                 <ScrollAnimation delay={50}>
                   <ProcessStepper 
                     steps={[
-                      { icon: Mic, label: "Dictee terrain" },
+                      { icon: Mic, label: "Field dictation" },
                       { icon: Cpu, label: "Transcription" },
-                      { icon: Gauge, label: "Analyse" },
-                      { icon: FileText, label: "Rapport" },
+                      { icon: Gauge, label: "Analysis" },
+                      { icon: FileText, label: "Report" },
                     ]}
                     currentStep={d3s}
                   />
@@ -810,10 +810,10 @@ export function ManufacturingContent() {
                     <div className="lg:col-span-5 space-y-4">
                       <div className="rounded-xl border overflow-hidden shadow-sm">
                         <WindowChrome 
-                          title="lexia-voice  —  Poste controle #7" 
+                          title="lexia-voice  —  Inspection station #7" 
                           status={d3 && d3s < 2 ? "REC" : undefined}
                           statusColor="red"
-                          right={d3 ? <span className="text-[10px] font-mono text-muted-foreground/60">Ronde 14h00</span> : null}
+                          right={d3 ? <span className="text-[10px] font-mono text-muted-foreground/60">Round 2:00 PM</span> : null}
                         />
                         <div className="p-5 bg-background flex items-center justify-center min-h-[56px]">
                           <VoiceWaveform active={d3 && d3s >= 0 && d3s < 2} color="emerald" />
@@ -831,14 +831,14 @@ export function ManufacturingContent() {
                             <>
                               <TypedTranscription
                                 active={d3s >= 1}
-                                text={`Controle lot 2847, reference ALU-PRO-25. Cote A : 12,3 millimetres, tolerance 12,0 plus ou moins 0,5. Conforme. Etat de surface face B : micro-rayures legeres, non bloquant.`}
+                                text={`Inspection lot 2847, reference ALU-PRO-25. Dimension A: 12.3 millimeters, tolerance 12.0 plus or minus 0.5. Compliant. Surface condition face B: minor micro-scratches, non-blocking.`}
                                 highlights={d3s >= 2 ? [
-                                  { word: "lot 2847", color: "bg-blue-500/15 text-blue-600 dark:text-blue-400", label: "N° lot", confidence: 99 },
+                                  { word: "lot 2847", color: "bg-blue-500/15 text-blue-600 dark:text-blue-400", label: "Lot #", confidence: 99 },
                                   { word: "ALU-PRO-25", color: "bg-violet-500/15 text-violet-600 dark:text-violet-400", label: "Reference", confidence: 99 },
-                                  { word: "12,3 millimetres", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Mesure", confidence: 98 },
-                                  { word: "12,0 plus ou moins 0,5", color: "bg-cyan-500/15 text-cyan-600 dark:text-cyan-400", label: "Tolerance", confidence: 99 },
-                                  { word: "Conforme", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Verdict", confidence: 99 },
-                                  { word: "micro-rayures legeres", color: "bg-amber-500/15 text-amber-600 dark:text-amber-400", label: "Observation", confidence: 95 },
+                                  { word: "12.3 millimeters", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Measurement", confidence: 98 },
+                                  { word: "12.0 plus or minus 0.5", color: "bg-cyan-500/15 text-cyan-600 dark:text-cyan-400", label: "Tolerance", confidence: 99 },
+                                  { word: "Compliant", color: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400", label: "Verdict", confidence: 99 },
+                                  { word: "minor micro-scratches", color: "bg-amber-500/15 text-amber-600 dark:text-amber-400", label: "Observation", confidence: 95 },
                                 ] : []}
                                 speed={24}
                               />
@@ -846,15 +846,15 @@ export function ManufacturingContent() {
                                 <div className="mt-5 pt-4 border-t border-dashed flex flex-wrap gap-1.5 anim-slide-up">
                                   <EntityTag label="LOT" value="2847" color="bg-blue-500/5 border-blue-500/20 text-blue-600 dark:text-blue-400" confidence={99} />
                                   <EntityTag label="REF" value="ALU-PRO-25" color="bg-violet-500/5 border-violet-500/20 text-violet-600 dark:text-violet-400" confidence={99} />
-                                  <EntityTag label="COTE A" value="12.3mm" color="bg-emerald-500/5 border-emerald-500/20 text-emerald-600 dark:text-emerald-400" confidence={98} />
-                                  <EntityTag label="VERDICT" value="Conforme" color="bg-emerald-500/5 border-emerald-500/20 text-emerald-600 dark:text-emerald-400" confidence={99} />
+                                  <EntityTag label="DIM. A" value="12.3mm" color="bg-emerald-500/5 border-emerald-500/20 text-emerald-600 dark:text-emerald-400" confidence={98} />
+                                  <EntityTag label="VERDICT" value="Compliant" color="bg-emerald-500/5 border-emerald-500/20 text-emerald-600 dark:text-emerald-400" confidence={99} />
                                 </div>
                               )}
                             </>
                           ) : (
                             <div className="flex items-center gap-2 text-[13px] text-muted-foreground/30">
                               <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/20" />
-                              En attente de dictee...
+                              Waiting for dictation...
                             </div>
                           )}
                         </div>
@@ -875,14 +875,14 @@ export function ManufacturingContent() {
                         <div className="flex items-center justify-between px-4 py-2.5 border-b bg-emerald-500/[0.04]">
                           <div className="flex items-center gap-2">
                             <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
-                            <span className="text-[11px] font-medium">SAP QM — Rapport #QC-2847</span>
+                            <span className="text-[11px] font-medium">SAP QM — Report #QC-2847</span>
                           </div>
                           <span className="text-[9px] font-mono text-muted-foreground/50">08/02/2026 14:02:18</span>
                         </div>
                         <div className="p-5 bg-background space-y-3">
                           <div className="grid grid-cols-2 gap-2.5">
                             <div className="rounded-lg border p-2.5 bg-muted/20">
-                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Lot</p>
+                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider mb-0.5">Batch</p>
                               <p className="text-[13px] font-medium font-mono">2847</p>
                             </div>
                             <div className="rounded-lg border p-2.5 bg-muted/20">
@@ -894,9 +894,9 @@ export function ManufacturingContent() {
                           {/* Tolerance gauge */}
                           <div className="rounded-lg border p-3 bg-muted/20">
                             <div className="flex items-center justify-between mb-2.5">
-                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider">Cote A — Controle dimensionnel</p>
+                              <p className="text-[9px] text-muted-foreground/60 uppercase tracking-wider">Dimension A — Dimensional inspection</p>
                               <span className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 flex items-center gap-1">
-                                <CheckCircle2 className="h-2.5 w-2.5" /> CONFORME
+                                <CheckCircle2 className="h-2.5 w-2.5" /> COMPLIANT
                               </span>
                             </div>
                             <div className="relative">
@@ -914,7 +914,7 @@ export function ManufacturingContent() {
                                 />
                               </div>
                               <div className="flex items-center gap-2 mt-2">
-                                <span className="text-[10px] text-muted-foreground">Mesure: <span className="font-medium font-mono text-foreground">12.3 mm</span></span>
+                                <span className="text-[10px] text-muted-foreground">Measured: <span className="font-medium font-mono text-foreground">12.3 mm</span></span>
                                 <span className="text-[10px] text-muted-foreground/50">|</span>
                                 <span className="text-[10px] text-muted-foreground">Tol: <span className="font-mono">11.5 — 12.5 mm</span></span>
                               </div>
@@ -924,17 +924,17 @@ export function ManufacturingContent() {
                           <div className="rounded-lg border p-2.5 bg-amber-500/[0.04] border-amber-500/15">
                             <div className="flex items-center gap-1.5 mb-0.5">
                               <AlertTriangle className="h-3 w-3 text-amber-500" />
-                              <p className="text-[9px] text-amber-600 uppercase tracking-wider font-medium">Observation — Mineur</p>
+                              <p className="text-[9px] text-amber-600 uppercase tracking-wider font-medium">Observation — Minor</p>
                             </div>
-                            <p className="text-[13px] text-muted-foreground">Micro-rayures sur face B. Non bloquant pour la conformite du lot.</p>
+                            <p className="text-[13px] text-muted-foreground">Micro-scratches on face B. Non-blocking for lot compliance.</p>
                           </div>
 
                           <div className="pt-1 flex items-center gap-4">
                             <div className="flex items-center gap-1.5 text-[10px] text-emerald-600/70 dark:text-emerald-400/70">
-                              <CheckCircle2 className="h-3 w-3" /> Integre SAP QM
+                              <CheckCircle2 className="h-3 w-3" /> Integrated SAP QM
                             </div>
                             <div className="flex items-center gap-1.5 text-[10px] text-emerald-600/70 dark:text-emerald-400/70">
-                              <CheckCircle2 className="h-3 w-3" /> Dossier lot MAJ
+                              <CheckCircle2 className="h-3 w-3" /> Lot file updated
                             </div>
                           </div>
                         </div>
@@ -945,9 +945,9 @@ export function ManufacturingContent() {
 
                 <div className="mt-14 grid grid-cols-3 gap-px bg-border rounded-xl overflow-hidden">
                   {[
-                    { value: "÷4", label: "Temps de reporting", sub: "Constatation au rapport final" },
-                    { value: "100%", label: "Tracabilite", sub: "Chaque inspection documentee" },
-                    { value: "+40%", label: "NC detectees", sub: "Facilite de signalement" },
+                    { value: "÷4", label: "Reporting time", sub: "From observation to final report" },
+                    { value: "100%", label: "Traceability", sub: "Every inspection documented" },
+                    { value: "+40%", label: "NCs detected", sub: "Ease of reporting" },
                   ].map((m, i) => (
                     <ScrollAnimation key={i} delay={80 * i}>
                       <div className="bg-background p-6 text-center">
@@ -968,23 +968,23 @@ export function ManufacturingContent() {
           <div className="container py-24 md:py-32">
             <ScrollAnimation>
               <div className="mx-auto max-w-4xl">
-                <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-4">Ecosysteme</p>
+                <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-4">Ecosystem</p>
                 <h2 className="mb-4 text-2xl font-light tracking-tight md:text-3xl">
-                  Integration native avec vos outils
+                  Native integration with your tools
                 </h2>
                 <p className="text-[15px] text-muted-foreground leading-relaxed max-w-lg mb-12">
-                  Lexia s&#39;adapte a votre infrastructure. Pas l&#39;inverse.
+                  Lexia adapts to your infrastructure. Not the other way around.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-xl overflow-hidden">
                   {[
                     { name: "SAP", desc: "ERP, PM, QM" },
                     { name: "Salesforce", desc: "CRM, Service Cloud" },
-                    { name: "GMAO", desc: "Carl, Maximo, Coswin" },
-                    { name: "GPAO", desc: "Ordonnancement" },
+                    { name: "CMMS", desc: "Carl, Maximo, Coswin" },
+                    { name: "MES", desc: "Scheduling" },
                     { name: "Microsoft", desc: "Dynamics, Teams" },
                     { name: "API REST", desc: "Custom endpoints" },
-                    { name: "Webhooks", desc: "Evenements temps reel" },
-                    { name: "On-Premise", desc: "Air-gap, souverain" },
+                    { name: "Webhooks", desc: "Real-time events" },
+                    { name: "On-Premise", desc: "Air-gap, sovereign" },
                   ].map((tool, i) => (
                     <ScrollAnimation key={i} delay={40 * i}>
                       <div className="bg-background p-5 text-center h-full hover:bg-muted/30 transition-colors">
@@ -1006,10 +1006,10 @@ export function ManufacturingContent() {
               <div className="mx-auto max-w-5xl">
                 <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-widest mb-4 text-center">Architecture</p>
                 <h2 className="mb-4 text-2xl font-light tracking-tight md:text-3xl text-center">
-                  Comment Lexia s&#39;integre
+                  How Lexia integrates
                 </h2>
                 <p className="text-[15px] text-muted-foreground text-center max-w-lg mx-auto mb-16">
-                  Du micro de l&#39;operateur jusqu&#39;a votre ERP, en moins de 200 millisecondes.
+                  From the operator&#39;s microphone to your ERP, in under 200 milliseconds.
                 </p>
 
                 {/* Visual flow diagram */}
@@ -1017,9 +1017,9 @@ export function ManufacturingContent() {
                   {/* Row 1 — Input sources */}
                   <div className="grid grid-cols-3 gap-4 mb-4">
                     {[
-                      { icon: Mic, label: "Operateur terrain", sub: "Casque / Micro EPI" },
-                      { icon: Phone, label: "Appel SAV entrant", sub: "Ligne telephonique" },
-                      { icon: MonitorSmartphone, label: "Application mobile", sub: "Tablette / Smartphone" },
+                      { icon: Mic, label: "Field operator", sub: "Headset / PPE mic" },
+                      { icon: Phone, label: "Incoming after-sales call", sub: "Phone line" },
+                      { icon: MonitorSmartphone, label: "Mobile application", sub: "Tablet / Smartphone" },
                     ].map((src, i) => (
                       <ScrollAnimation key={i} delay={i * 80}>
                         <div className="rounded-xl border-2 border-dashed border-muted-foreground/15 p-5 text-center h-full">
@@ -1055,16 +1055,16 @@ export function ManufacturingContent() {
                           </div>
                           <div>
                             <p className="text-sm font-medium">Lexia Engine</p>
-                            <p className="text-[10px] text-muted-foreground">IA vocale industrielle</p>
+                            <p className="text-[10px] text-muted-foreground">Industrial voice AI</p>
                           </div>
                         </div>
                         <div className="hidden md:block w-px h-12 bg-border" />
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 flex-1">
                           {[
-                            { icon: Activity, label: "Transcription", sub: "Temps reel" },
-                            { icon: Search, label: "NER metier", sub: "Entites industrielles" },
-                            { icon: Layers, label: "Structuration", sub: "Champs auto" },
-                            { icon: Send, label: "Dispatch", sub: "Multi-systemes" },
+                            { icon: Activity, label: "Transcription", sub: "Real-time" },
+                            { icon: Search, label: "Industry NER", sub: "Industrial entities" },
+                            { icon: Layers, label: "Structuring", sub: "Auto fields" },
+                            { icon: Send, label: "Dispatch", sub: "Multi-system" },
                           ].map((step, i) => (
                             <div key={i} className="text-center">
                               <div className="w-8 h-8 rounded-lg bg-muted/50 border flex items-center justify-center mx-auto mb-1.5">
@@ -1093,9 +1093,9 @@ export function ManufacturingContent() {
                   {/* Row 3 — Output systems */}
                   <div className="grid grid-cols-3 gap-4">
                     {[
-                      { icon: Wrench, label: "GMAO", sub: "Tickets maintenance", color: "border-emerald-500/20 bg-emerald-500/[0.03]" },
-                      { icon: Database, label: "CRM / ERP", sub: "Fiches clients, tickets SAV", color: "border-emerald-500/20 bg-emerald-500/[0.03]" },
-                      { icon: FileText, label: "Qualite", sub: "Rapports, conformite", color: "border-emerald-500/20 bg-emerald-500/[0.03]" },
+                      { icon: Wrench, label: "CMMS", sub: "Maintenance tickets", color: "border-emerald-500/20 bg-emerald-500/[0.03]" },
+                      { icon: Database, label: "CRM / ERP", sub: "Customer records, after-sales tickets", color: "border-emerald-500/20 bg-emerald-500/[0.03]" },
+                      { icon: FileText, label: "Quality", sub: "Reports, compliance", color: "border-emerald-500/20 bg-emerald-500/[0.03]" },
                     ].map((out, i) => (
                       <ScrollAnimation key={i} delay={450 + i * 80}>
                         <div className={`rounded-xl border-2 p-5 text-center h-full ${out.color}`}>
@@ -1121,11 +1121,11 @@ export function ManufacturingContent() {
               <div className="mx-auto max-w-4xl">
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border rounded-xl overflow-hidden">
                   {[
-                    { icon: Shield, label: "RGPD", sub: "Conforme" },
-                    { icon: Lock, label: "E2E Encrypted", sub: "Chiffrement bout en bout" },
+                    { icon: Shield, label: "GDPR", sub: "Compliant" },
+                    { icon: Lock, label: "E2E Encrypted", sub: "End-to-end encryption" },
                     { icon: Server, label: "On-Premise", sub: "Air-gap ready" },
-                    { icon: Globe, label: "Made in France", sub: "Souverainete" },
-                    { icon: BadgeCheck, label: "ISO 27001", sub: "Securite certifiee" },
+                    { icon: Globe, label: "Made in France", sub: "Sovereignty" },
+                    { icon: BadgeCheck, label: "ISO 27001", sub: "Certified security" },
                   ].map((badge, i) => (
                     <ScrollAnimation key={i} delay={i * 60}>
                       <div className="bg-background p-6 text-center h-full flex flex-col items-center justify-center gap-2">
@@ -1148,7 +1148,7 @@ export function ManufacturingContent() {
           <div className="relative h-[480px] md:h-[560px]">
             <img
               src="/images/factory-wide.jpg"
-              alt="Environnement industriel — ligne de production"
+              alt="Industrial environment — production line"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
@@ -1157,22 +1157,22 @@ export function ManufacturingContent() {
                 <ScrollAnimation>
                   <div className="max-w-xl">
                     <h2 className="mb-4 text-2xl font-light tracking-tight md:text-3xl text-white">
-                      Pret a transformer vos operations ?
+                      Ready to transform your operations?
                     </h2>
                     <p className="text-[15px] text-white/70 leading-relaxed mb-8">
-                      30 minutes pour vous montrer comment Lexia s&#39;integre 
-                      a votre environnement industriel.
+                      30 minutes to show you how Lexia integrates
+                      into your industrial environment.
                     </p>
                     <div className="flex flex-col sm:flex-row items-start gap-3">
                       <Link href="/contact">
                         <Button size="lg" className="font-normal h-11 px-6 bg-white text-black hover:bg-white/90">
-                          Planifier une demo
+                          Schedule a Demo
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </Link>
                       <Link href="/contact">
                         <Button size="lg" variant="ghost" className="font-normal h-11 px-6 text-white/70 hover:text-white hover:bg-white/10">
-                          Nous contacter
+                          Contact Us
                         </Button>
                       </Link>
                     </div>

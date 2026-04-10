@@ -49,7 +49,7 @@ export function TeamContent() {
                   <Card className="border-2 rounded-xl overflow-hidden group transition-all duration-300 hover:shadow-lg">
                     <CardContent className="p-0">
                       <div className="relative w-full aspect-[4/3]">
-                        <Image src="/logos/lexia-equipe-team-paris.jpg" alt="Équipe Lexia - startup deeptech française de technologie vocale basée à Paris, fondée par Mathis Escriva et Martial Roberge" fill className="object-cover transition-transform duration-300 group-hover:scale-105" title="Lexia - Équipe fondatrice de la startup de technologie vocale à Paris" itemProp="contentUrl" />
+                        <Image src="/logos/lexia-equipe-team-paris.jpg" alt="Équipe Lexia - startup deeptech française de technologie vocale basée à Paris, fondée par Mathis Escriva et Martial Roberge" fill className="object-cover transition-transform duration-300 group-hover:scale-105" title="Lexia - Équipe fondatrice de la startup de technologie vocale à Paris" itemProp="contentUrl" priority />
                       </div>
                     </CardContent>
                   </Card>
@@ -79,15 +79,15 @@ export function TeamContent() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {[
-                { name: "Mathis Escriva", role: "Co-Founder", src: "/logos/mathis.png" },
-                { name: "Martial Roberge", role: "Co-Founder", src: "/logos/martial.png" },
-                { name: "Hugo Fouan", role: "CTO", src: "/logos/hugo.png" },
-                { name: "Jeanne Lesca", role: "Head of Marketing & Communication", src: "/logos/jeanne.png" },
+                { name: "Mathis Escriva", role: "Co-Founder", src: "/logos/mathis.jpg" },
+                { name: "Martial Roberge", role: "Co-Founder", src: "/logos/martial.jpg" },
+                { name: "Hugo Fouan", role: "CTO", src: "/logos/hugo.jpg" },
+                { name: "Jeanne Lesca", role: "Head of Marketing & Communication", src: "/logos/jeanne.jpg" },
               ].map((member, i) => (
                 <ScrollAnimation key={i} delay={i * 80}>
                   <div className="group text-center">
                     <div className="relative w-full rounded-xl overflow-hidden mb-4 border">
-                      <Image src={member.src} alt={member.name} width={600} height={800} className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
+                      <Image src={member.src} alt={member.name} width={600} height={800} className="w-full h-auto transition-transform duration-500 group-hover:scale-105" loading="eager" />
                     </div>
                     <h3 className="text-sm font-medium">{member.name}</h3>
                     <p className="text-xs text-muted-foreground mt-0.5">{member.role}</p>

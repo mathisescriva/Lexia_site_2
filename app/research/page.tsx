@@ -3,23 +3,23 @@ import { ResearchContent } from "./ResearchContent"
 import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Recherche & Développement - IA Vocale & Modèles Speech-to-Text",
-  description: "Recherche et développement Lexia en collaboration avec le Intelligence Lab de l'ECE. Modèles speech-to-text optimisés pour l'entreprise, post-training, optimisation de modèles, publications scientifiques. Modèles disponibles sur Hugging Face.",
+  title: "Research & Development - Voice AI & Speech-to-Text Models",
+  description: "Lexia research and development in collaboration with the Intelligence Lab at ECE. Enterprise-optimized speech-to-text models, post-training, model optimization, scientific publications. Models available on Hugging Face.",
   keywords: [
-    "recherche IA vocale",
-    "modèles speech-to-text",
+    "voice AI research",
+    "speech-to-text models",
     "post-training LLM",
-    "optimisation modèles",
+    "model optimization",
     "AI Lab ECE",
     "Hugging Face models",
     "SLERP model merging",
-    "publications scientifiques IA",
-    "recherche deeptech",
+    "AI scientific publications",
+    "deeptech research",
     "Lexia Labs",
   ],
   openGraph: {
-    title: "Recherche & Développement | Lexia",
-    description: "Modèles speech-to-text optimisés pour l'entreprise. Post-training, optimisation, publications scientifiques.",
+    title: "Research & Development | Lexia",
+    description: "Enterprise-optimized speech-to-text models. Post-training, optimization, scientific publications.",
     type: "website",
     url: "https://www.lexiapro.fr/research",
     images: [
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "R&D Lexia - IA Vocale & Modèles Speech-to-Text",
-    description: "Recherche et développement de modèles speech-to-text pour l'entreprise.",
+    title: "Lexia R&D - Voice AI & Speech-to-Text Models",
+    description: "Research and development of enterprise speech-to-text models.",
     images: ["/logos/IALAB1.webp"],
   },
   alternates: {
@@ -47,7 +47,7 @@ const researchJsonLd = {
   "@type": "ResearchProject",
   name: "Lexia Research & Development",
   url: "https://www.lexiapro.fr/research",
-  description: "Recherche et développement de modèles speech-to-text optimisés pour l'entreprise, en collaboration avec le Intelligence Lab de l'ECE.",
+  description: "Research and development of enterprise-optimized speech-to-text models, in collaboration with the Intelligence Lab at ECE.",
   funder: {
     "@type": "Organization",
     name: "Lexia",

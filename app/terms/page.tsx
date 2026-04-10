@@ -7,12 +7,12 @@ import { ScrollAnimation } from "@/components/ScrollAnimation"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Conditions Générales d'Utilisation",
-  description: "Conditions générales d'utilisation de Lexia. Termes et conditions d'utilisation de notre site web et de nos services de technologie vocale pour l'entreprise.",
-  keywords: ["conditions générales", "CGU", "termes de service", "Lexia", "utilisation"],
+  title: "Terms of Service",
+  description: "Terms of service for Lexia. Terms and conditions of use for our website and enterprise voice technology services.",
+  keywords: ["terms of service", "TOS", "terms and conditions", "Lexia", "usage"],
   openGraph: {
-    title: "Conditions Générales d'Utilisation | Lexia",
-    description: "Conditions d'utilisation du site web et des services Lexia.",
+    title: "Terms of Service | Lexia",
+    description: "Terms of use for the Lexia website and services.",
     type: "website",
     url: "https://www.lexiapro.fr/terms",
   },
@@ -54,126 +54,126 @@ export default function TermsPage() {
                 <div className="prose prose-lg max-w-none">
                   <div className="space-y-8">
                     <div>
-                      <h2 className="text-2xl font-light mb-4">1. Informations Légales</h2>
+                      <h2 className="text-2xl font-light mb-4">1. Legal Information</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        Le site web <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link> est édité par :
+                        The website <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link> is published by:
                       </p>
                       <p className="text-base leading-relaxed text-foreground mb-4">
                         <strong>LEXIA FRANCE</strong><br />
-                        Société par actions simplifiée au capital social de 500 €<br />
-                        Siège social : MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE<br />
-                        Immatriculée au Registre du Commerce et des Sociétés de Laval sous le numéro 928 955 426<br />
-                        SIRET : 92895542600020<br />
-                        Représentée par M. Mathis Escriva agissant et ayant les pouvoirs nécessaires en tant que président
+                        Simplified joint-stock company (SAS) with a share capital of €500<br />
+                        Registered office: MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE<br />
+                        Registered with the Laval Trade and Companies Register under number 928 955 426<br />
+                        SIRET: 92895542600020<br />
+                        Represented by Mr. Mathis Escriva, acting and duly authorized as President
                       </p>
                       <p className="text-base leading-relaxed text-foreground">
-                        Email : <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a>
+                        Email: <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a>
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">2. Objet</h2>
+                      <h2 className="text-2xl font-light mb-4">2. Purpose</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Les présentes conditions générales d'utilisation (CGU) ont pour objet de définir les conditions d'accès et d'utilisation du site web <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link> ainsi que les services proposés par LEXIA FRANCE.
+                        The purpose of these Terms of Service (TOS) is to define the conditions of access to and use of the website <Link href="https://www.lexiapro.fr" className="underline hover:opacity-60 transition-opacity">www.lexiapro.fr</Link> as well as the services offered by LEXIA FRANCE.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">3. Acceptation des Conditions</h2>
+                      <h2 className="text-2xl font-light mb-4">3. Acceptance of Terms</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        L'accès et l'utilisation du site impliquent l'acceptation pleine et entière des présentes CGU. Si vous n'acceptez pas ces conditions, nous vous invitons à ne pas utiliser notre site web.
+                        Accessing and using the website implies full and complete acceptance of these Terms of Service. If you do not accept these terms, we ask that you refrain from using our website.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">4. Accès au Site</h2>
+                      <h2 className="text-2xl font-light mb-4">4. Access to the Website</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        L'accès au site est libre et gratuit. LEXIA FRANCE se réserve le droit de :
+                        Access to the website is free of charge. LEXIA FRANCE reserves the right to:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed text-foreground">
-                        <li>Modifier, suspendre ou interrompre l'accès au site à tout moment</li>
-                        <li>Restreindre l'accès à certaines parties du site</li>
-                        <li>Modifier ou supprimer tout contenu du site</li>
+                        <li>Modify, suspend, or discontinue access to the website at any time</li>
+                        <li>Restrict access to certain parts of the website</li>
+                        <li>Modify or remove any content from the website</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">5. Utilisation du Site</h2>
+                      <h2 className="text-2xl font-light mb-4">5. Use of the Website</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        Vous vous engagez à utiliser le site de manière conforme aux présentes CGU et à la législation en vigueur. Il est notamment interdit de :
+                        You agree to use the website in accordance with these Terms of Service and applicable law. In particular, it is prohibited to:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed text-foreground">
-                        <li>Utiliser le site à des fins illégales ou frauduleuses</li>
-                        <li>Porter atteinte aux droits de propriété intellectuelle de LEXIA FRANCE</li>
-                        <li>Perturber le fonctionnement du site ou des serveurs</li>
-                        <li>Tenter d'accéder de manière non autorisée à des zones restreintes du site</li>
-                        <li>Transmettre des virus, logiciels malveillants ou tout code nuisible</li>
+                        <li>Use the website for illegal or fraudulent purposes</li>
+                        <li>Infringe upon the intellectual property rights of LEXIA FRANCE</li>
+                        <li>Disrupt the operation of the website or its servers</li>
+                        <li>Attempt unauthorized access to restricted areas of the website</li>
+                        <li>Transmit viruses, malware, or any harmful code</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">6. Propriété Intellectuelle</h2>
+                      <h2 className="text-2xl font-light mb-4">6. Intellectual Property</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        L'ensemble du contenu du site (textes, images, logos, graphismes, etc.) est la propriété exclusive de LEXIA FRANCE ou de ses partenaires et est protégé par le droit d'auteur et les lois sur la propriété intellectuelle. Toute reproduction, représentation, modification ou adaptation sans autorisation préalable est strictement interdite.
+                        All content on the website (text, images, logos, graphics, etc.) is the exclusive property of LEXIA FRANCE or its partners and is protected by copyright and intellectual property laws. Any reproduction, representation, modification, or adaptation without prior authorization is strictly prohibited.
                       </p>
                     </div>
 
                     <div>
                       <h2 className="text-2xl font-light mb-4">7. Services</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        LEXIA FRANCE propose des services de technologie vocale et de reconnaissance vocale pour les entreprises. Les caractéristiques, prix et conditions d'utilisation des services sont décrits sur le site et peuvent être modifiés à tout moment sans préavis.
+                        LEXIA FRANCE provides voice technology and speech recognition services for businesses. The features, pricing, and terms of use for these services are described on the website and may be modified at any time without prior notice.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">8. Protection des Données Personnelles</h2>
+                      <h2 className="text-2xl font-light mb-4">8. Personal Data Protection</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Le traitement de vos données personnelles est décrit dans notre <Link href="/privacy" className="underline hover:opacity-60 transition-opacity">Politique de Confidentialité</Link>, qui fait partie intégrante des présentes CGU.
+                        The processing of your personal data is described in our <Link href="/privacy" className="underline hover:opacity-60 transition-opacity">Privacy Policy</Link>, which forms an integral part of these Terms of Service.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">9. Limitation de Responsabilité</h2>
+                      <h2 className="text-2xl font-light mb-4">9. Limitation of Liability</h2>
                       <p className="text-base leading-relaxed text-foreground mb-4">
-                        LEXIA FRANCE s'efforce d'assurer l'exactitude et la mise à jour des informations sur le site, mais ne peut garantir leur exhaustivité ou leur exactitude. LEXIA FRANCE ne pourra être tenue responsable de :
+                        LEXIA FRANCE endeavors to ensure the accuracy and currency of the information on the website but cannot guarantee its completeness or accuracy. LEXIA FRANCE shall not be held liable for:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 text-base leading-relaxed text-foreground">
-                        <li>Dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser le site</li>
-                        <li>Interruptions, erreurs ou bugs du site</li>
-                        <li>Pertes de données ou autres dommages informatiques</li>
-                        <li>Utilisation frauduleuse ou non autorisée de vos identifiants</li>
+                        <li>Direct or indirect damages resulting from the use of, or inability to use, the website</li>
+                        <li>Interruptions, errors, or bugs on the website</li>
+                        <li>Loss of data or other computer-related damages</li>
+                        <li>Fraudulent or unauthorized use of your credentials</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">10. Liens Externes</h2>
+                      <h2 className="text-2xl font-light mb-4">10. External Links</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Le site peut contenir des liens vers des sites externes. LEXIA FRANCE n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leur politique de confidentialité.
+                        The website may contain links to external websites. LEXIA FRANCE has no control over these websites and disclaims any liability for their content or privacy policies.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">11. Modification des CGU</h2>
+                      <h2 className="text-2xl font-light mb-4">11. Amendments to the Terms</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        LEXIA FRANCE se réserve le droit de modifier les présentes CGU à tout moment. Les modifications entrent en vigueur dès leur publication sur le site. Il est recommandé de consulter régulièrement cette page pour prendre connaissance des éventuelles modifications.
+                        LEXIA FRANCE reserves the right to modify these Terms of Service at any time. Amendments take effect upon publication on the website. We recommend that you review this page regularly to stay informed of any changes.
                       </p>
                     </div>
 
                     <div>
-                      <h2 className="text-2xl font-light mb-4">12. Droit Applicable et Juridiction</h2>
+                      <h2 className="text-2xl font-light mb-4">12. Governing Law and Jurisdiction</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Les présentes CGU sont régies par le droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français seront seuls compétents.
+                        These Terms of Service are governed by French law. In the event of a dispute, and after an attempt at amicable resolution, the French courts shall have exclusive jurisdiction.
                       </p>
                     </div>
 
                     <div>
                       <h2 className="text-2xl font-light mb-4">13. Contact</h2>
                       <p className="text-base leading-relaxed text-foreground">
-                        Pour toute question concernant ces conditions générales d'utilisation, vous pouvez nous contacter à :
+                        For any questions regarding these Terms of Service, you may contact us at:
                       </p>
                       <ul className="list-none pl-0 mt-4 space-y-2 text-base leading-relaxed text-foreground">
-                        <li>Email : <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a></li>
-                        <li>Adresse : MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE</li>
+                        <li>Email: <a href="mailto:contacts@lexiapro.fr" className="underline hover:opacity-60 transition-opacity">contacts@lexiapro.fr</a></li>
+                        <li>Address: MAISON DE LA TECHNOPOLE 6 RUE LEONARD DE VINCI 53810 CHANGE</li>
                       </ul>
                     </div>
                   </div>
