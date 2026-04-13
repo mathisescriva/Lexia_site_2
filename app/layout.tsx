@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lexiapro.fr"),
   title: {
-    default: "Lexia - Enterprise Voice Technology | Sovereign Speech-to-Text",
+    default: "Lexia - Technologie Vocale Souveraine pour l'Entreprise",
     template: "%s | Lexia",
   },
   description: "Lexia is a French deeptech company specializing in enterprise voice technology. Sovereign speech-to-text solutions, automatic transcription, voice CRM, and meeting intelligence. On-premise deployment, GDPR compliant.",

@@ -3,7 +3,7 @@ import { HomePage } from "./HomePage"
 import { JsonLd } from "@/components/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Lexia - Technologie Vocale pour l'Entreprise | Speech-to-Text Souverain",
+  title: "Lexia - Technologie Vocale Souveraine pour l'Entreprise",
   description: "Lexia est une entreprise deeptech française spécialisée dans la technologie vocale. Solutions speech-to-text souveraines : CRM vocal, transcription automatique d'appels, intelligence de réunion. +99% de précision, <200ms de latence, déploiement on-premise, RGPD compliant.",
   keywords: [
     "technologie vocale entreprise",
