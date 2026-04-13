@@ -98,6 +98,12 @@ const teamJsonLd = {
         jobTitle: "Fullstack Developer & MLOps",
         image: "https://www.lexiapro.fr/logos/mouchon.jpg",
       },
+      {
+        "@type": "Person",
+        name: "Alexis Lainault",
+        jobTitle: "R&D Engineer",
+        image: "https://www.lexiapro.fr/logos/alexis.png",
+      },
     ],
   },
 }

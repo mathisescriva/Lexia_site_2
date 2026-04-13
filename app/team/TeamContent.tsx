@@ -77,18 +77,19 @@ export function TeamContent() {
               </div>
             </ScrollAnimation>
 
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
               {[
-                { name: "Mathis Escriva", role: "Co-Founder", src: "/logos/mathis.jpg" },
-                { name: "Martial Roberge", role: "Co-Founder", src: "/logos/martial.jpg" },
-                { name: "Hugo Fouan", role: "CTO", src: "/logos/hugo.jpg" },
-                { name: "Jeanne Lesca", role: "Head of Marketing & Communication", src: "/logos/jeanne.jpg" },
+                { name: "Mathis Escriva", role: "Co-Founder", src: "/logos/mathis.png" },
+                { name: "Martial Roberge", role: "Co-Founder", src: "/logos/martial.png" },
+                { name: "Hugo Fouan", role: "CTO", src: "/logos/hugo.png" },
+                { name: "Jeanne Lesca", role: "Head of Marketing & Communication", src: "/logos/jeanne.png" },
+                { name: "Alexis Lainault", role: "R&D Engineer", src: "/logos/alexis.png" },
                 { name: "Louis Mouchon", role: "Fullstack Developer & MLOps", src: "/logos/mouchon.jpg" },
               ].map((member, i) => (
                 <ScrollAnimation key={i} delay={i * 80}>
                   <div className="group text-center">
-                    <div className="relative w-full rounded-xl overflow-hidden mb-4 border">
-                      <Image src={member.src} alt={member.name} width={600} height={800} className="w-full h-auto transition-transform duration-500 group-hover:scale-105" loading="eager" />
+                    <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden mb-4 border">
+                      <Image src={member.src} alt={member.name} fill className="object-cover object-top transition-transform duration-500 group-hover:scale-105" />
                     </div>
                     <h3 className="text-sm font-medium">{member.name}</h3>
                     <p className="text-xs text-muted-foreground mt-0.5">{member.role}</p>
