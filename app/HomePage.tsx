@@ -85,13 +85,12 @@ export function HomePage() {
                   </Button>
                 </Link>
               </div>
-              {/* Company Logos */}
+              {/* Company Logos - temporarily hidden
               {companyLogos.length > 0 && (
                 <div className="pt-16 border-t">
                   <p className="mb-8 text-sm text-muted-foreground font-normal">Trusted by leading enterprises</p>
                   <div className="relative overflow-hidden">
                     <div className="flex items-center gap-12 opacity-60 grayscale animate-scroll">
-                      {/* Duplicate logos for seamless loop */}
                       {[...companyLogos, ...companyLogos].map((logo, index) => (
                         <Image
                           key={index}
@@ -106,6 +105,7 @@ export function HomePage() {
                   </div>
                 </div>
               )}
+              */}
             </div>
             
             {/* Right Waveform */}
@@ -781,8 +781,8 @@ export function HomePage() {
 
         <Separator />
 
-        {/* Partners Section */}
-        <section id="partners" className="container py-16 md:py-24" itemScope={true} itemType="https://schema.org/Organization">
+        {/* Partners Section - temporarily hidden */}
+        <section id="partners" className="container py-16 md:py-24 hidden" itemScope={true} itemType="https://schema.org/Organization">
           <ScrollAnimation>
             <div className="mx-auto max-w-7xl">
               <h2 className="mb-12 text-2xl font-light tracking-tight md:text-3xl text-center">

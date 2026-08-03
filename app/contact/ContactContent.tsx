@@ -184,25 +184,7 @@ export function ContactContent() {
                     </div>
                   </div>
 
-                  {/* Trusted By Section */}
-                  <div className="pt-8 border-t">
-                    <h3 className="text-sm font-normal text-muted-foreground mb-6">
-                      Trusted by leading enterprises
-                    </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                      {companyLogos.map((logo, index) => (
-                        <div key={index} className="flex items-center justify-center opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
-                          <Image
-                            src={logo.src}
-                            alt={logo.alt}
-                            width={100}
-                            height={40}
-                            className="h-8 w-auto object-contain"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  {/* Trusted By Section - temporarily hidden */}
 
                   {/* Footer Links */}
                   <div className="pt-8 border-t space-y-6">
